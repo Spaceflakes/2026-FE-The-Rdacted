@@ -1,0 +1,206 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+\title{WRO Engineering Manual}
+\author{Team: The Redacted}
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\section{Selection of Components}
+
+\subsection{Sensing}
+
+The WRO Future Engineers challenge sets certain criteria on the needed hardware. The second challenge makes teams not just detect walls but the pillars and their colors, as well as the ability to parallel park. \\
+
+This means that a comprehensive and accurate inference of the playing field is required. There are multiple paths one can go down to fulfill this, there are perhaps only two practical routes. One is using distance sensors along with a camera and the other is using a 2-dimensional LiDAR.  \\
+
+The trade-offs between the two are fairly significant. The LiDAR comes at a higher cost than the camera and provides absolute and accurate cloud point data that can be used to detect the pillars and construct a map of the playing field with high accuracy. While the camera system is cheaper in the hardware cost, it has a significant cost in terms of compute. The detection of the actual pillars in the second round is easy, disregarding how slowly it would have to run and train (about $1/2-1$ Hz for good reliability on a wide FOV camera running YOLO, taking about 3 hours to train on 300 images, and a variable time to compute, not real time), lacks in the accuracy of positioning the pillars in dynamic environments. The LiDAR also provides very accurate and fast ($8-20$Hz) feedback for absolute positioning on the go, something the camera does not. The aspect of parallel parking also plays into the advantage of the LiDAR. The LiDAR can provide a lot more detail than a distance assisted vision system could provide. If one did not use a LiDAR, atleast 4 mutually perpendicular distance sensor, Time of Flight or Ultrasonic, would have to be implemented on an I2C bus. \\
+
+All this made the case for using the LiDAR stronger. On smaller scales, where the camera is quite a bit lager than the vehicle and so is the LiDAR, using a LiDAR makes sense due to the current lack of compute density for very small and light boards being an issue. But, for larger vehicles, where the cost of cameras scales linearly and the LiDAR scales exponentially, using multiple cameras and cheaper, larger compute makes sense. Hence, we decided to use a LiDAR for our vehicle. \\
+
+However, this did come at a major trade-off and design cost. We had to keep the whole vehicle shorter than 80 mm to accommodate for a clear view of the laser at about 90 mm and have a clearance of 10 mm from the top of the 100 mm arena walls to account for deviations in the walls and potentially the playing field as well. \\
+
+For the actual hardware, the \textbf{YD-LiDAR X4 Pro} was chosen due to it's compatibility with ROS and it's relatively low cost and high scanning speed along with it's resolution. The X4 Pro provides the high range that is needed, extending from 8 centimeters to 10 meters. When measuring less than 8 centimeters, parallel parking for example, the fall further away will be utilized to interpolate. The USB interface of the LiDAR also was very handy along with the openly available library and drivers.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/lidar.jpg}
+    \caption{The YD-LiDAR X4 Pro.}
+    \label{fig:X4_PRO} 
+\end{figure}
+
+Because the LiDAR only outputs the point cloud data, and we need to find the color of the pillars as well, a wide FOV camera is used in tandem. It is only used to determine the color of the pillar and not used for detection. The LiDAR detects the pillar and the image from the camera is then used to assign the color. This keeps the compute costs very low and allows for very fast inference. The camera used is the \textbf{Arducam IMX219 Wide Angle Camera}. It has a field of view of $175^\circ$. This allows us to have the maximum window for inference possible as we don't need the data resolution a camera based solution would.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/camera.jpg}
+    \caption{The IMX219 with a very wide angle lens.}
+    \label{fig:Cam} 
+\end{figure}
+
+\subsection{Compute}
+
+The compute module doesn't need to be something excessive like the Jetson Orion Nano. The compute required to complete both the challenges is fairly low and could be done on an STM32 H7 micro-controller as well. The compute module has to fulfill the following requirements:
+
+\begin{enumerate}
+\item Small form factor.
+\item Have a USB poet.
+\item Have a Camera Serial Interface .
+\item Run ROS or Micro ROS.
+\item Have a decent number of exposed IO pins for accessories.
+\item Have the ability to read/write code for easy iterations.
+\end{enumerate}
+
+This led to the Raspberry Pi 4B. Any other similar Single Board Computer (SBC) can be used. The 4GB RAM version was chosen so that a graphical user interface could be ran on it if needed when editing code during the competition. It would also provide sufficient headroom. A 2GB RAM version would have also been sufficient. A Raspberry Pi 5 would be overkill. The Pi 4 is also cheaper and easier to source. It would also have the compute needed to run the control loop at higher frequencies and have faster and more accurate control. \\
+
+The only downside of the Rspberry Pi was it's size. It's a lot larger than needed, and occupies crucial space in the limited volume. This was solved with intentional and clever design. It's availability of USB ports and the CSI makes it a very appealing solution. Custom hardware, ST based micro-controller or a board with the Raspberry Pi Compute Module, can be used but would be harder to source and would involve a longer development time. The Raspberry Pi also acts as a drop in solution as it has an external micro-SD card where all the code is stored, allowing for easy access and replaceability.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/rpi4b.png}
+    \caption{The Raspberry Pi 4 Model B.}
+    \label{fig:Rpi} 
+\end{figure}
+
+\subsection{Motion}
+
+A \textbf{rear wheel drive system} was chosen as it would distribute the complexity of the steering and drive systems, allowing easier manufacturing and assembly. The trade-off made here was that a \textbf{differential would be required} to prevent under steer that would be cause when turning at tight radii and slow speeds. This increases the complexity slightly, but not as much as using a drive and steering would need. \\
+
+The motion system can be broken down into two parts, the drive system and the steering system. \\
+
+\subsubsection{Drive System}
+
+A brush less DC (BLDC) motor is proffered over a brushed motor due to it's higher resolution of speed changes particularly at a low speeds. That comes particularly handy when parallel parking. It is also preferred due to its efficiency and torque. The ideal case would be a stepper or BLDC motor with Field Oriented Control (FOC) as it would provide excellent position and torque control, but sourcing such FOC motor drivers in a small and compact size is very hard and expensive. A note should be made that developing such a custom FOC motor driver for 10-20A should not be hard but would take time. \\
+
+For the motor, a Surpass Hobby \textbf{36 mm diameter in runner BLDC motor} is used. The 36 mm diameter is chosen as it provides enough \textbf{torque, acceleration and internal breaking} for a 1.5 kg vehicle. The length of the motor is 74 mm. This makes it a \textbf{3674 motor}. The motor is also widely used in scale RC cars and hence is easy to source. The motor is rated at \textbf{1700 kv}, which provides generous speed and high torque. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/motor.jpg}
+    \caption{The Motor.}
+    \label{fig:motor} 
+\end{figure}
+
+A Surpass Hobby 3 Phase \textbf{120A 4S ESC} is used. This Electronic Speed Controller is preferred due to its high \textbf{reliability and headroom, along with its configurability}. The ESC can be configured to operate at certain speed, torque and braking levels with a configurator device. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/esc.jpg}
+    \caption{The ESC.}
+    \label{fig:ESC} 
+\end{figure}
+
+Do note that if built again, a shorter motor and lower ampere rated ESC would be used, something like a 3650 motor and a 60A ESC. The 3674 motor is too long and has excessive torque that is not really needed. The shorter motor should be used to reduce the weight as much as possible. The ideal motor would be a 3650 motor rated somewhere about 1000 kv. The 60A ESC would also be chosen to reduce weight. The current setup was chosen because it is what was available without purchasing new components. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.3\textwidth]{img/configurator.jpg}
+    \caption{The Configuration Device that connects via PWM.}
+    \label{fig:configurator} 
+\end{figure}
+
+\subsubsection{Steering System}
+
+A \textbf{direct drive steering system} was chosen for the vehicle, meaning that the servo directly drives the wheels. This was chosen as the steering links would be manufactured using 3D printing and each joint would cause additional backlash in the linkage mechanism. A system with a grater mechanical leverage would hence be more complex and less accurate, while taking more volume. \\
+
+The \textbf{S2500M} servo motor is used, which provides a torque of about 25 $\frac{kg}{cm}$ at about $8$V. This would be provide ample headroom in a direct drive steering system. The only downside to contend with in this system is its weight and the fact that the servo runs on $8$V, meaning it will need its own power supply. Do note that a lower torque servo that operates on $5$V can be used if needed, the S2500M was available without purchasing new components. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/servo.jpg}
+    \caption{The S2500M metal gear servo motor.}
+    \label{fig:servo} 
+\end{figure}
+
+\subsection{Power Management}
+
+The batteries were chosen on strict power consumption metrics. [Power usage table]. \\
+
+To provide adequate headroom for the 3+ minutes of operation needed, \textbf{2 DOGCOM 4S 850 mAh batteries were used in parallel}. A single 4S 850 mAh battery in testing at full motion capabilities provided power for about 2.5 minutes before it went below the safe discharge voltage of 3.5 V per cell. Hence a second battery is needed for headroom. \\
+
+The 4S batteries are used as they have the maximum voltage compatible with the setup, allowing the maximum acceleration and torque for the vehicle. The batteries use a \textbf{Li-Po (Lithium Polymer)} chemistry as that provides the high discharge current needed. It is also widely available and hence easy to source. On a larger scale vehicle, Li-Ion cells would be used due to their longer discharge cycle rating as the only major draw back with Li-Po batteries are their lower charge cycle rating. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/battery.jpg}
+    \caption{The DOGCOM 4s 850 mAh battery.}
+    \label{fig:battery} 
+\end{figure}
+
+\subsection{The Additional Hardware}
+
+Additional hardware such as bearings and wheels are needed to build the vehicle. These are things that cannot be 3D printed and are manufactured in other ways or are sourced. \\
+
+\subsubsection{Bearings}
+
+For the two front steering knuckles, a \textbf{thrust roller bearing} is used. This is a type of bearing that combines a needle and thrust bearing in a single housing. It is used to constraint the location of the two front steering wheels though the axis of rotation and ensure there is no play present. If a normal roller ball bearing would be used, the outward and asymmetric torque of the wheel "pin" would misalign the groove and the balls causing excessive play. The thrust roller bearing is a compact solution used in real cars as well. \\
+
+The inner diameter of the bearing is 12 mm. It is the "\textbf{BCWN-T-d12-IR}" bearing, sourced from JLCMC. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/needle_roller.png}
+    \caption{The internals of a Combined needle roller / thrust ball bearing.}
+    \label{fig:needle_roller_thrust_bearing} 
+\end{figure}
+
+For the differential, traditional roller ball bearings were used as the axial forces transferred are not that high. The \textbf{6901ZZ} ball bearing is used as it is in a very compact package that has an internal diameter of 12 mm, an external diameter of 24 mm and a width of 6 mm, making it ideal to put in the already compact differential gear box. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/roller.png}
+    \caption{The 6901ZZ roller ball bearing.}
+    \label{fig:roller_bearing} 
+\end{figure}
+ 
+To support the rear axle, needle roller bearings are used. They are used as they have low friction and can withstand very high forces perpendicular to the axis of rotation, prefect for transferring the weight from the main body of the vehicle to the wheels. The "\textbf{BCWG-NK12/12}" bearing was used, sourced from JLCMC. It has an inner diameter of 12 mm, an outer diameter of 19.5 mm and is 12 mm deep. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/needle_roller.jpeg}
+    \caption{The Needle Roller bearing.}
+    \label{fig:needle_roller_bearing} 
+\end{figure}
+
+\subsubsection{Carbon Fiber Tubes}
+
+Carbon fiber tubes were used at several places as axles, linkage connectors and structural connectors. This decision was made as carbon fiber has a very high tensile strength and is particularly very stiff perpendicular to it's length. \\
+
+A combination of 2 diameters were used. The axle for the rear two wheels were made using \textbf{12 mm outer diameter} and 10 mm inner diameter carbon fiber tubes. Any aluminum or steel shaft could be used here, but a 3D printed shaft cannot be used as the layer lines of the print would be perpendicular to the layer lines, leading to very weak prints. Carbon fiber was used as it is light weight and relatively easy to source in \textbf{roll wrapped rods}. This tube consists of "twill" and not "toe". \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/12cf.png}
+    \caption{The 12 mm CF rod.}
+    \label{fig:12mm_cf} 
+\end{figure}
+
+The other rod used was a \textbf{3 mm outer diameter solid pultruded} rod. It is used in the steering links as well as the structural spin that runs throughout the vehicle to provide stiffness to the frame and not let the printed parts sag. It is pultruded, meaning it does not consist of carbon fibers but of chopped carbon bits held by epoxy. It is comparatively less stiff but still very strong. It consists of "toe" and no "twill". \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/3cf.png}
+    \caption{The 3 mm PultrudedCF rod.}
+    \label{fig:3mm_cf} 
+\end{figure}
+
+\pagebreak
+
+\section{PCB Assembly}
+
+
+
+\end{document}

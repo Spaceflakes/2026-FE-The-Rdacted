@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Selection of Components}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Sensing}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Compute}{5}{}%
+\contentsline {subsection}{\numberline {1.3}Motion}{6}{}%
+\contentsline {subsubsection}{\numberline {1.3.1}Drive System}{6}{}%
+\contentsline {subsubsection}{\numberline {1.3.2}Steering System}{7}{}%
+\contentsline {subsection}{\numberline {1.4}Power Management}{8}{}%
+\contentsline {subsection}{\numberline {1.5}The Additional Hardware}{9}{}%
+\contentsline {subsubsection}{\numberline {1.5.1}Bearings}{9}{}%
+\contentsline {subsubsection}{\numberline {1.5.2}Carbon Fiber Tubes}{11}{}%
+\contentsline {section}{\numberline {2}PCB Assembly}{13}{}%
