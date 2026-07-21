@@ -1,11 +1,21 @@
-\contentsline {section}{\numberline {1}Selection of Components}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Sensing}{3}{}%
-\contentsline {subsection}{\numberline {1.2}Compute}{5}{}%
-\contentsline {subsection}{\numberline {1.3}Motion}{6}{}%
-\contentsline {subsubsection}{\numberline {1.3.1}Drive System}{6}{}%
-\contentsline {subsubsection}{\numberline {1.3.2}Steering System}{7}{}%
-\contentsline {subsection}{\numberline {1.4}Power Management}{8}{}%
-\contentsline {subsection}{\numberline {1.5}The Additional Hardware}{9}{}%
-\contentsline {subsubsection}{\numberline {1.5.1}Bearings}{9}{}%
-\contentsline {subsubsection}{\numberline {1.5.2}Carbon Fiber Tubes}{11}{}%
-\contentsline {section}{\numberline {2}PCB Assembly}{13}{}%
+\contentsline {section}{\numberline {1}Selection of Components}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Sensing}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Compute}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Motion}{6}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Drive System}{6}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Steering System}{7}{subsubsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.4}Power Management}{8}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}The Additional Hardware}{9}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Bearings}{9}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}Carbon Fiber Tubes}{11}{subsubsection.1.5.2}%
+\contentsline {section}{\numberline {2}PCB Assembly}{13}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Purpose}{13}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Form Factor}{14}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Selection of the ICs}{14}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}The 5.1V Rail}{14}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}The 8V Rail}{15}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}The Schematic}{15}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}The Layout \& Routing}{18}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Assembly}{23}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Mistakes \& Errors}{24}{subsection.2.7}%
+\contentsline {section}{\numberline {3}3D Prints \& CAD}{25}{section.3}%

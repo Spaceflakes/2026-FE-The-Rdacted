@@ -6,6 +6,7 @@
 \usepackage{makeidx}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{hyperref}
 \usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
 \title{WRO Engineering Manual}
 \author{Team: The Redacted}
@@ -200,6 +201,205 @@ The other rod used was a \textbf{3 mm outer diameter solid pultruded} rod. It is
 \pagebreak
 
 \section{PCB Assembly}
+
+The first question one should ask is why use a PCB at all? Why not just use jumper wires and other modules? \\
+
+The answer is quite simple yet complex. A Printed Circuit Board (PCB) integrates all the power management components needed into a sleek and compact form factor without a lot of wiring. The Raspberry pi has a $20 \times 2$ pin interface, which isn't very neat in it self. One can connect the individual jumpers to the header pins but it becomes VERY cumbersome very fast. Hence a PCB is almost necessary for a vehicle that can be easily serviced and is well engineered. Another major driver for this, as you will learn, comes from issues learnt from Siddesh's participation in WRO the previous year. KiCAD was used as the eCAD tool to design the PCBs.\\
+
+\subsection{Purpose}
+
+When participating in WRO 2025, the SD Card we were using failed on us the day before the final competition. It was corrupted and the Raspberry Pi would not boot up at all. Turns out the issue was that that the Raspberry Pi was constantly undervolting under load. We had attempted to add a capacitor before the competition to resolve the issue, but the effort proved futile. Upon reviewing the logs, we confirmed that these undervoltage events were, in fact, what caused the SD card to fail. The buck converter was rated for $5$V at a nominal current of $3$A and a burst current of $5$A. Yet the Raspberry Pi wouldn't boot. \\
+
+The Raspberry Pi needs a voltage higher that just $5$V. It needs a voltage of about $5.15$V to prevent the undervolting issue we had seen earlier. We searched the market for a buck converter capable of providing the $5.1$V and $3$A but I couldn't find a suitable option. Hence it was determined that a custom solution was needed. \\
+
+Hence the following considerations for the PCB were formed $\rightarrow$
+
+\begin{enumerate}
+\item Deliver $5.15$V to the Raspberry Pi and have a continuous rating of atleast $3$-$5$A to power the LiDAR as well.
+\item Deliver $8$V to the servo motor at $2$A.
+\item Provide a better hardware interface than the $20 \times 2$ connector for the Servo and ESC.
+\item Be compact and reliable.
+\item Have additional expansion ports for Time Of Flight Sensors, and more Servos.
+\item Integrate the power switch and start switch, along with indicator LEDs needed for the rules on to the board.
+\item Look good!
+\end{enumerate}
+
+\subsection{Form Factor}
+
+The first thing to decide after deciding the purpose is to decide the form factor of the PCB. This in turn, will decide where the PCB will live. \\
+
+The best form factor is having the PCB as a hat above the Raspberry Pi itself. This is because of the following reasons $\rightarrow$
+
+\begin{enumerate}
+\item There is a relatively large space above the Raspberry Pi, somewhere about 65 mm $\times$ 56 mm.
+\item A simple header pin board can be added to the PCB, meaning it will directly interface with the header pins on the Raspberry Pi. This would eliminate the need for adding wires between the Pi and the PCB, ensuring efficient and smooth power distribution and connections.
+\item It would provide ease of maintenance to the PCB and uninterrupted access to the switches.
+\end{enumerate}
+
+\subsection{Selection of the ICs}
+
+Due to the custom need for the $5.15$V and a lack of existing modules, a custom voltage converter module would have to be implemented on the PCB hat. Since we were already using SMD (Surface Mount Device) components for the $5.15$V PCB, we decided to integrate the $8$V part as well on the PCB itself rather than have a separate module. \\
+
+We use buck converters, which are a form of switching regulators rather than using linear regulators. Although linear regulators provide the smoothest possible voltage, they dissipate the remaining energy as heat, and hence are very inefficient and only good for low power applications where the voltage difference between the input and output is very low. However, we need the exact opposite. We need to draw an insignificant current and our voltage difference between the input and output is substantial. Hence we use switching regulators. The only downside is that they do not have a clean voltage output as they use a MOSFET to switch at between $0$V and battery voltage at high frequencies. This can be compensated for using good design and with adding filtering capacitors at the output.
+
+\subsubsection{The 5.1V Rail}
+
+The LM61460 from Texas Instruments was chosen as the switching regulator due to its size and the fact that it has a continuous limit of $6$A. It is also ideal because it has symmetric switching nodes and in built MOSFETs, which reduce noise. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/LM61460.png}
+    \caption{The LM61460 in the VQFN-HR package.}
+    \label{fig:LM61460} 
+\end{figure}
+
+The values for the schematic were obtained using the TI Workbench.
+
+\subsubsection{The 8V Rail}
+
+The TPS62932 from Texas Instruments was chosen as it is incredible small and has a current rating of $2$A. It also has an in built MOSFET in its incredible tiny package of just 2.1 mm $\times$ 1.6 mm.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/TPS62932.png}
+    \caption{The TPS62932 in the SOT-583 package.}
+    \label{fig:TPS62932} 
+\end{figure}
+
+The values for the schematic were obtained using the TI Workbench.
+
+\subsection{The Schematic}
+
+The first stage of the PCB development process is creating the schematic; the wiring diagram for all the connections. The first step is to add all the individual components that are used, the Raspberry Pi, the buck converter ICs, the motors, the LEDs, the switches, the power connectors and any other I/O that maybe needed. \\
+
+The switching regulators need additional hardware, such as resistors and capacitors along with an inductor. The value of these components decide what voltage you get at the output. To find these values, the TI workbench tool was used. The TI workbench allows one to configure the parameters and then produces a schematic (Figure \ref{fig:TI_WB}). This is then used to set the value and the connections of the SMD components. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/TI_LM.png}
+    \includegraphics[width=1\textwidth]{img/TI_TPS.png}
+    \caption{The files for the schematic given by TI Workbench.}
+    \label{fig:TI_WB} 
+\end{figure}
+
+The schematic (Figure \ref{fig:Schematic}) created is in 3 pages. The main page has the XT30 power connector input and the power switch. The Raspberry Pi page consists of the Raspberry Pi, the sensors and I/O devices. The power page consists of all the power regulation circuitry. It also has 2 additional electrolytic capacitors, one $220 \mu \text{F}$ and the other $270 \mu \text{F}$. They both act as decoupling capacitors for the Raspberry Pi and the servo respectively. They ensure that when there are load spikes from either devices, the Raspberry Pi booting or the servo starting to move, the spike does not reach the ICs and is handled locally.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.65\textwidth]{img/sch1.png}
+    \includegraphics[width=.65\textwidth]{img/sch2.png}
+    \includegraphics[width=.65\textwidth]{img/sch3.png}
+    \caption{The 3 pages of the schematic.}
+    \label{fig:Schematic} 
+\end{figure}
+
+The PDF for the Schematic can also be found in the PCBA folder. The BOM for all the parts is also available there, along with the manufacturer used.
+
+\subsection{The Layout \& Routing}
+
+This step is very crucial, it is responsible for how well the components interact with each-other and determines how clean your output voltage is. A \textbf{4 layer board} was chosen. This was done as it would make the routing easier across multiple layers and because a 4 layer stack up is recommended in the LM61460 data sheet. \\
+
+All the SMD components would be place on one side of the board so that the board could be assembled on a hot plate. This would also aid with the ease of assembly. The following is the stack up $\rightarrow$
+
+\begin{enumerate}
+\item Layer 1: It carries much of the important \textbf{signals}, especially for the buck converters.
+\item Layer 2: A solid \textbf{Ground} plane to reduce EMI and act as a fast return path of the top player.
+\item Layer 3: The \textbf{Power} plane consisting of the input voltage, $5.15$V and $8$V.
+\item Layer 4: A \textbf{Ground} plane that also carried some of the \textbf{signals} from the Raspberry Pi.
+\end{enumerate}
+
+The first thing to do is create the board outline. A rounded rectangle with length $65$mm, height $56$mm and a corner radius of $2$mm was chosen. A $6$mm notch was then removed from the bottom right of the board to allow the camera ribbon cable to pass through. Figure \ref{fig:Outline} shows the shape of the board.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.65\textwidth]{img/outline.png}
+    \caption{The "edge cuts" layer.}
+    \label{fig:Outline} 
+\end{figure}
+
+After this, the fixed components are place, such as the mounting holes for the board and the $20 \times 2$ female header pin that connects to the Raspberry Pi. These need to be incredibly precise as they are the locating hardware for the hat to connect on to the Raspberry Pi. M$2.5$ holes are used.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.65\textwidth]{img/fixed_items.png}
+    \caption{The fixed items layer.}
+    \label{fig:Fixed_Items_PCB} 
+\end{figure}
+
+The next part is the most cumbersome. All the physical parts need to be laid out in a manner that ensures the most ideal connections possible. The 3 main current loops; ON-State Current Loop, OFF-State Current Loop and The "Hot Loop"; of the buck converter need to be kept as short as possible. Since we are using a symmetric buck converter, it also needs to be made sure that the power lines to both sides are as similar as they can be. The path between the switching node and the inductor needs to be as short as possible. All the connectors need to accessible. \\
+
+For this reason, the power connector (XT30) and the power switch were placed on the right side. The switching circuitry was spread around the middle. The second switch and the connectors for the motor and servo were kept on the left side. The electrolytic capacitors were placed as close to the outputs as possible. The LEDs were also placed in the middle. The extra components, such as the connectors for the 2 ToF sensors and an extra PWM connector were kept on the bottom and bottom right respectively. Figure \ref{fig:Layout} shows the layout of the final board. It is fairly crammed but a lot more items, such as more LEDs, Current and Voltage sensing and a CAN BUS port can also be added in the future.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/Layout.png}
+    \caption{The final layout depicting the placement of all the components.}
+    \label{fig:Layout} 
+\end{figure}
+
+Figure \ref{fig:Layers} shows the actual copper layers as they are. Copper pours are preferred whenever possible. They also help with thermal management. It was made sure that there were no wires beneath the two inductors to make sure all the signal traces are as clean as possible.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{img/l1.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{img/l2.png}
+    \includegraphics[width=.6\textwidth]{img/l3.png}
+    \includegraphics[width=.6\textwidth]{img/l4.png}
+    \caption{The 4 copper layers. Layer$1$ $\rightarrow$ $4$.}
+    \label{fig:Layers} 
+\end{figure}
+
+Some art work and quotes were added to the free space to ensure complete utilization and occupation of left over space. A black solder mask was chosen. Figure \ref{fig:KiCAD_Render} show the PCB rendered in the KiCAD 3D viewer. The contribution for the art work goes to M.C. Escher.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/top_render.png}
+    \includegraphics[width=1\textwidth]{img/bottom_render.png}
+    \caption{The rendered PCB.}
+    \label{fig:KiCAD_Render} 
+\end{figure}
+
+The PCB was manufactured by JLC. JLC was chosen due to their lower cost for black solder mask compared to Indian manufactures. The following are the basic parameters:
+
+\begin{enumerate}
+\item Base material: FR4
+\item PCB Thickness: $1.6$mm
+\item PCB Color: Black
+\item Silkscreen: White
+\item Material Type: FR4 TG135
+\item Surface Finish: Lead Free HASL (Hot air solder leveling)
+\end{enumerate}
+
+\subsection{Assembly}
+
+The assembly was done by hand. 0603 class components are not too hard to place by hand. Alternatively, assembly can be done by the manufacturer as well. \\
+
+A stencil was used to apply the layer of $183^\circ$ C solder paste on to the board with the help of an old credit card. The "Interactive Html Bom" plugin (Figure \ref{fig:IHBT}) was used to aid with assembly. The plugin creates a interactive html file that can be used to figure out the placement of the components. Alternatively, the PCB and schematic editor can itself be used to figure the placement out but using the plugin is recommended do to its convenience. Once the components have been laid out, a final visual inspection can be carried out. \\
+
+The boards can then be re-flowed on the hot plate. It is recommended to follow the heat curve of the solder paste being used. If the plate available does not have the ability to follow a curve, let the board heat soak at about $50$-$80^\circ$ C below the melting point of the solder paste for about 1-2 minutes to let the flux activate before increasing the temperature to its final point. \\
+
+Our hot plate did not have the feature to follow the heat curve so we let our boards soak at $130^\circ$ C for 90 seconds after increasing the temperature to $195^\circ$ C till all of the paste re-flowed and waited 30 seconds more before taking the boards off the hot plate. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/IHBT.png}
+    \caption{The Interactive HTML BOM Tool.}
+    \label{fig:IHBT} 
+\end{figure}
+
+The HTML file generated by the plugin can be found in the PCB folder along with the BOM.
+
+\subsection{Mistakes \& Errors}
+
+\pagebreak
+
+\section{3D Prints \& CAD}
+
+
 
 
 
