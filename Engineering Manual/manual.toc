@@ -8,6 +8,7 @@
 \contentsline {subsection}{\numberline {1.5}The Additional Hardware}{9}{subsection.1.5}%
 \contentsline {subsubsection}{\numberline {1.5.1}Bearings}{9}{subsubsection.1.5.1}%
 \contentsline {subsubsection}{\numberline {1.5.2}Carbon Fiber Tubes}{11}{subsubsection.1.5.2}%
+\contentsline {subsubsection}{\numberline {1.5.3}Wheels}{12}{subsubsection.1.5.3}%
 \contentsline {section}{\numberline {2}PCB Assembly}{13}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Purpose}{13}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Form Factor}{14}{subsection.2.2}%
@@ -17,5 +18,7 @@
 \contentsline {subsection}{\numberline {2.4}The Schematic}{15}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}The Layout \& Routing}{18}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Assembly}{23}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Mistakes \& Errors}{24}{subsection.2.7}%
-\contentsline {section}{\numberline {3}3D Prints \& CAD}{25}{section.3}%
+\contentsline {subsubsection}{\numberline {2.6.1}Advice}{24}{subsubsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.7}Mistakes \& Errors}{25}{subsection.2.7}%
+\contentsline {section}{\numberline {3}3D Prints \& CAD}{27}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Layout \& Wheelbase}{27}{subsection.3.1}%
