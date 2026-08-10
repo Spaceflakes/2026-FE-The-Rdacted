@@ -6,7 +6,9 @@
 \usepackage{makeidx}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{subcaption}
 \usepackage{hyperref}
+\usepackage{wasysym}
 \usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
 \title{WRO Engineering Manual}
 \author{Team: The Redacted}
@@ -17,6 +19,10 @@
 \pagebreak
 
 \tableofcontents
+
+\pagebreak
+
+\listoffigures
 
 \pagebreak
 
@@ -198,7 +204,9 @@ The other rod used was a \textbf{3 mm outer diameter solid pultruded} rod. It is
     \label{fig:3mm_cf} 
 \end{figure}
 
-\subsubsection{Wheels}
+\subsection{Wheels}
+
+On the market
 
 
 
@@ -448,7 +456,7 @@ Hence the decision was made to re order a new set with the fixed connections, \t
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\textwidth]{img/bodge.jpeg}
-    \caption{The Bodge Wire. The brown area on the top right of the copper wire represents the cut out trace.}
+    \caption[The Bodge Wire.]{The brown area on the top right of the copper wire represents the cut out trace.}
     \label{fig:bodge} 
 \end{figure}
 
@@ -472,7 +480,404 @@ Pre-flight and Orca Slicer were the Slicers used for the conversion of the 3D fi
 
 \subsection{Layout \& Wheelbase}
 
+To adhere to the strict volume limitations we set in the introduction, a slightly wider wheelbase was opted compared to what most competitors would probably use. This was done so that more horizontal volume could be allotted to the components without shifting them vertically. A strict horizontal width limit was put at $180$mm to ensure the $200$mm limit was not breached. The wheels where placed as far out as possible to maximize component volume and have better stability. \\
 
+A wheelbase of $184.3$mm was chosen. A longer wheelbase would mean that the vehicle would have trouble parallel parking. The number $184.3$, may seem odd but it was derived from scaling the Aston Martin Valkyrie down to the size of the wheels being used. \\
+
+The layout, as mentioned earlier, a Rear Wheel drive mechanism with front wheel steering was chosen. This made the layout slightly easier but it was crammed nevertheless. Figure \ref{fig:Top_main_view} shows the CAD assembly, moving top down. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/top_full.png}
+    \caption{The Onshape assembly.}
+    \label{fig:Top_main_view} 
+\end{figure}
+
+Starting at the front, we have the camera as the front most element. This is driven by the fact that the camera has a very high FOV and the best view would be unobstructed. Just behind it is the front axle. It houses the steering system and the bearings. In the center there sits the LiDAR, directly positioned on top of all the components. Below the LiDAR, with a healthy amount of spacing to prevent EMI is the motor. To the right of the motor, the ESC is mounted vertically. The Raspberry Pi is mounted on the left side of the motor. Moving further back, we reach the differential and the rear axle. The batteries sit atop the rear axle baring mounts. \\
+
+It was critical for every single part to be accounted for. All the models were self designed. There are a few critical assemblies that need to be discussed in order. \\
+
+\subsection{The Steering Assembly}
+
+\subsubsection*{Front Wheel Adapter}
+
+The steering assembly originates from two points in space, the contact points for the needle roller thrust bearings (Figure \ref{fig:needle_roller_thrust_bearing}). The bearings connect to the wheels via a rod that is capped at on end. The rod as a nominal diameter of $12$mm and a length of $38$mm. The cap at the end has a diameter of $20$mm and a width of $3$mm. The rod also has a $\diameter 2$mm hole at the end, spaced $4.5$mm from the edge of the non capped end to interface with the wheel (Figure: \ref{fig:wheel_CAD}) via a M2 screw.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.4\textwidth]{img/front_wheel_adapter.png}
+    \caption{The Front Wheel Adapter Pin.}
+    \label{fig:C_FWA_pin} 
+\end{figure}
+
+The pin is printed vertically, with the cap end facing down. This does spread the load across the layer lines, the load on the front wheels isn't drastic enough for one to be concerned. The part is printed with a layer height of $0.2$mm, has $3$ perimeters and a $25\%$ infill.
+
+\subsubsection*{Steering Knuckles}
+
+We next interface with the stationary parts of the bearing. To do this, we make a clamp style part that relies on the pressure and friction to keep the bearing constrained. We replicate the grove in the bearing as a positive feature to constrain the bearing axially.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.4\textwidth]{img/steering_knuckle.png}
+    \caption{The Steering Knuckle.}
+    \label{fig:C_SK} 
+\end{figure}
+
+To interface the two part clamp, we use two M$3 \times 12$ screws and M$3$ nuts. We flatten out the sphere at $\diameter 31$mm so that the clamps can interface with the other steering parts and rotate in the vertical axis. To do this, we add a $\diameter 2.8$mm hole on the top for a M$3$ screw. We keep the hole smaller than the screw diameter so that the screw can create the threads in the plastic part as it enters. This is done as using a heat set inset would take too much space. Also it is justified by the lower loads. We also add a $\diameter 2.5$mm hole so that a screw can be added for the steering rod interface. These would be like Steering Knuckles in a traditional car. It is mirrored to fit on the left side. \\
+
+The part is printed with the face closest to the bearing (and image in Figure \ref{fig:C_SK}) facing down. This not only transfers the loads along the layers but also ensure a good interference fit with the bearing. The part is printed with a layer height of $0.2$mm, has $3$ perimeters and a $25\%$ infill. 
+
+\subsubsection*{Steering Column}
+
+The steering column consists of 4 parts (See Figure \ref{fig:C_SC}), the top brace (light blue), the bottom brace (grey) and 2 side braces (dark blue). It mounts the servo on the center of the front axle and provides interface points with the rest of the vehicle. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{img/steering_col_parts.png}
+    \caption{The Steering Column.}
+    \label{fig:C_SC} 
+\end{figure}
+
+The top brace is the largest part in the steering column. It mounts the servo and the camera. The servo mounts via 4 M$3 \times 20$ screws and has a mounting pattern of $10.5 \times 48$mm. The top brace has an hole at each extreme so that it can interface with the steering knuckle. It does so by using M$3 \times 8$ screws. The holes are space $131$mm apart. The top brace has 4 additional counter bore holes that connect it with the 2 side braces. On the rear face of the mount, there are two locating holes for the carbon fiber rods that are spread apart by $36$mm. There also exists a flat face with space for 2 $M3 \times 6$ heat set inserts so that the part can interface with the rest of the body and is constrained.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.4\textwidth]{img/top_brace.png}
+    \caption{The Top Brace.}
+    \label{fig:C_SC_TB} 
+\end{figure}
+
+The part is printed with the top face (See Figure \ref{fig:C_SC_TB}) facing down, at a layer height of $0.2$mm, has $3$ perimeters and a $25\%$ infill. The part nominally includes features to aid with counter bore bridging but PreFlight can also be used to aid with this. \\
+
+The bottom brace is the simplest part. It is a slightly curved piece that spans the breadth of the wheelbase. It has $4$ countersunk holes, $2$ to interface with the steering knuckles, and $2$ to interface with the side braces, using M$3 \times 8$mm countersunk and M$3 \times 10$mm countersunk screws respectively. The part is printed with the bottom face (See Figure \ref{fig:C_SC_BB}) facing up, so that the sunk bores are not printed as overhangs. It is printed at a layer height of $0.2$mm, has $3$ perimeters and a $25\%$ infill.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.4\textwidth]{img/bottom_brace.png}
+    \caption{The Bottom Brace.}
+    \label{fig:C_SC_BB} 
+\end{figure}
+
+The side braces are slightly more complex in geometry as they are a product of lofts. The side braces have spaces for $2$ M$3 \times 6$mm brass heat set inserts on the top, and $1$ M$3 \times 6$mm brass heat set inset on the bottom to interface with the top and bottom braces receptively. The side brace also has a feature to interface with the bottom set of $\diameter 3$mm Carbon Fiber Rods. The part is designed for the left and is mirrored to fit for the right side. The part is printed with the top surface facing down, at a layer height of $0.2$mm, has $3$ perimeters and a $25\%$ infill.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.4\textwidth]{img/side_brace.png}
+    \caption{The Side Brace.}
+    \label{fig:C_SC_SB} 
+\end{figure}
+
+They all combine to form the steering column.
+
+\subsubsection*{Servo Horn}
+
+The servo horn is the part that clamps on the the shaft of thew servo and interfaces with the steering linkage rods. It is a fairly simple part. It houses a $\diameter 6$mm  hole at one end and the space for a M$3 \times 6$ spacer (See Figure \ref{fig:C_SH}, grey) that is press fit into it. The distance between the two is $30$mm. The height of the part is also $6$mm. The part is printed at a layer height of $0.2$mm, has $3$ perimeters and a $25\%$ infill. To maximize the frictional force, the inside surface of the hole is printed with Fuzzy Skin, with a thickness of $0.1$mm and $0.2$mm.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{img/servo_horn.png}
+    \caption{The Servo Horn.}
+    \label{fig:C_SH} 
+\end{figure}
+
+\subsubsection*{Steering Links}
+
+The steering links, along with a $\diameter 3$mm Carbon Fiber rod make up the steering rod. The links have $2$ parts (See Figure \ref{fig:C_SL}), one that connects to the servo, the servo link (Figure \ref{fig:C_SL_Servo}) and the other other that connects to the knuckle (Figure \ref{fig:C_SL_Wheel}), the wheel link. The servo link has a height of $7.1$mm with a $\diameter 3$mm hole running through the center for a M$3 \times 10$mm screw. It also has a space for the carbon fiber rod perpendicular to the screw. The wheel link is similar with a height of $5$mm and a hole for a M$2.5 \times 18$mm screw that connects it to the steering knuckles. The two links rely on the screw as a "pin" to rotate freely. A bearing is not used for this revolute joint as the size is too small to accommodate any and the force are low. The part is printed at a layer height of $0.12$mm, has $3$ perimeters and a solid infill. $2$ sets of these are needed to form the $2$ steering rods. One is mounted at the top and the other at the bottom (Figure \ref{fig:C_SL_Context}).
+
+\begin{figure}[H]
+    \centering
+    % --- Left Column (Stacked Images) ---
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{subfigure}[b]{\textwidth}
+            \centering
+            \includegraphics[width=0.85\linewidth]{img/steering_link_1.png}
+            \caption{Servo Link}
+            \label{fig:C_SL_Servo}
+        \end{subfigure}
+        
+        \vspace{1.5em} % Balanced spacing between the two stacked images
+        
+        \begin{subfigure}[b]{\textwidth}
+            \centering
+            \includegraphics[width=0.85\linewidth]{img/steering_link_2.png}
+            \caption{Wheel Link}
+            \label{fig:C_SL_Wheel}
+        \end{subfigure}
+    \end{subfigure}
+    \hfill
+    % --- Right Column (Vertical Image Aligned to Center) ---
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        % Using \linewidth ensures it fits cleanly within its column boundary
+        \includegraphics[width=\linewidth, keepaspectratio]{img/steering_link_3.png}
+        \caption{Installation Context}
+        \label{fig:C_SL_Context}
+    \end{subfigure}
+
+    \caption{The Steering Links}
+    \label{fig:C_SL}
+\end{figure}
+
+\subsubsection*{TPU Spacer/Shim}
+
+A Outer $\diameter 16$mm and inner $\diameter 12.80$mm spacer, with a height of $6$mm is needed. This sits between the bearing and the wheel and provides pre-load to the whole stack up. This is used as the roller thrust bearing is only constrained in one direction by the end cap. The other end is hence constrained by the TPU spacer and the pre-load it provides. The pre-load also ensures there is as little play between the axle and the bearing as possible. Figure \ref{fig:C_TPUS} (red) shows the placement of the spacer in section view. Since it is made out of a flexible material with a shore hardness of $95$A, the height of the spacer determines the pre-load force. The part is printed at a layer height of $0.2$mm, has $3$ perimeters and a solid infill. It is utilized on both sides.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{img/tpu_spacer.png}
+    \caption{The TPU Spacer.}
+    \label{fig:C_TPUS} 
+\end{figure}
+
+This concludes the assembly of the front axle. The length of the $\diameter 3$mm carbon fiber rod used in the steering links is $\approx 48$mm. It is glued to the steering links. 
+
+\subsection{The Differential}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.9\textwidth]{img/diff_gearbox.png}
+    \caption{The Differential Gearbox.}
+    \label{fig:C_DG_Assem} 
+\end{figure}
+
+As mentioned earlier, a differential gear box is used. The center of the gearbox is formed by the "spider" gears and the carrier along with the main gearbox. In a differential gearbox, the housing containing the spider and main gears also rotates and is mounted to a stationary mount. The housing contains the main gear reduction for the differential. The spider gears assist with the difference in speeds of the two main gears (and hence wheels). All of the parts of the gearbox are 3D printed. The net reduction produced is $8:28 = 2:7$.
+
+\subsubsection*{The Gears}
+
+The differential consists of $3$ spider gears and $2$ main gears All the gears present are bevel gears created using the OnShape bevel gear scripts. \\
+
+The spider gears have $9$ teeth, a module of $1.5$mm, a pressure angle of $20^{\circ}$ and a bevel angle of $30.96^{\circ}$. The spider gears have a $\diameter 3$mm hole through the center to interface with the axle. The top has be flattened to aid with printing. They are set $120^{\circ}$ apart. See Figure \ref{fig:C_DG_SG}. \\
+
+The main gears have $15$ teeth, a module of $1.5$mm, a pressure angle of $20^{\circ}$ and a bevel angle of $59.04^{\circ}$. Notice that the bevel angles of the 2 types add up to $90^{\circ}$. The main gear transfer all the load to the wheels. Hence, using a single screw in the center would cause it to loosen due to the torque caused. Hence, $2$ screws are use that are placed $3$mm apart from the center to connect the gears to the part that interfaces with the rear axles. Behind the gear sits a $\diameter 12$mm $\times 11$mm cylinder that interfaces with the bearings. The top has be flattened to aid with printing. See Figure \ref{fig:C_DG_MG}.
+
+\begin{figure}[H]
+    \centering
+    % --- Left Column (Stacked Images) ---
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{subfigure}[b]{\textwidth}
+            \centering
+            \includegraphics[width=0.85\linewidth]{img/diff_gear_1.png}
+            \caption{The Spider Gear}
+            \label{fig:C_DG_SG}
+        \end{subfigure}
+        
+        \vspace{1.5em} % Balanced spacing between the two stacked images
+        
+        \begin{subfigure}[b]{\textwidth}
+            \centering
+            \includegraphics[width=0.85\linewidth]{img/diff_gear_2.png}
+            \caption{The Main Gear}
+            \label{fig:C_DG_MG}
+        \end{subfigure}
+    \end{subfigure}
+    \hfill
+    % --- Right Column (Vertical Image Aligned to Center) ---
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        % Using \linewidth ensures it fits cleanly within its column boundary
+        \includegraphics[width=\linewidth, keepaspectratio]{img/diff_gear_3.png}
+        \caption{Installation Context}
+        \label{fig:C_DG_Context}
+    \end{subfigure}
+    \caption{The Differential Gears}
+    \label{fig:C_DG}
+\end{figure}
+
+All 5 of the parts are printed at a layer height of $0.12$mm, has $3$ perimeters and a solid infill. A brim is used to aid with bed adhesion. The spider gears and the main gears are printed with the gear face facing down. This means that the forces of the gears runs along the layer. However, this means that the rotational force of the main gear to the wheels runs across the layer lines, which would mean that the are where the gear ends and the cylinder starts is the weakest area. To counter this, the M$3 \times 20$ button head screws that are used to connect the main gear and the axles run all the way to the end of the gear, meaning they transfer most of the rotational loads and strengthen the part's function across the layer lines. See figure \ref{fig:C_DG_Context}.
+
+\subsubsection*{The Carrier/Spider Center}
+
+The Spider Center is the part that holds all the spider hears in the center and aligns them. In the housing, it is suspended by the M$3 \times 10$mm Button Head screws. See Figure \ref{fig:C_DG_SC}. \\
+
+It's a filleted triangle with 3 $\diameter 3$mm holes on each side. It has a height of $6$mm. It is printed at a layer height of $0.12$mm, has $3$ perimeters and a solid infill. A brim is used to aid with bed adhesion. The part can be printed on either of the larger, flat surfaces.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth, height=0.4\textheight, keepaspectratio]{img/diff_sc_1.png}
+        \caption{The Part.}
+        \label{fig:diff_sc_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth, height=0.4\textheight, keepaspectratio]{img/diff_sc_2.png}
+        \caption{The Spider Center in Action.}
+        \label{fig:diff_sc_2}
+    \end{subfigure}
+    
+    \caption{The Spider Center.}
+    \label{fig:C_DG_SC}
+\end{figure}
+
+\subsubsection*{Housing}
+
+The housing for the differential gears consists of $2$ halves, the left half and the right half. The two halves are connected by $3$ M$3 \times 30$mm screws and M$3$ nuts (See Figure \ref{fig:C_DG_Assem}). \\
+
+The housing not only houses the gears but also $2 \times$ 6901ZZ bearings (Figure \ref{fig:roller_bearing}). This is to decouple the rotation of the main gears with the rotation of the housing when the two axles are spinning at different speeds. The left housing and the right housing are nearly identical. The left housing houses the bevel gear ring needed to rotate the differential housing using the motor. That gear has $28$ teeth, a module of $1.5$mm and a bevel angle of $70^{\circ}$. In Figure \ref{fig:C_DG_H}, the left housing is the one in light blue and the right housing is in dark blue. The bearings sit inside the housing. \\
+
+The part is printed with the center surface of each of the half facing down. Looking carefully, a chamfer is  present on the end where the bearings sit. This allows for the overhangs to be managed better. It is printed at a layer height of $0.12$mm, has $3$ perimeters and a $25\%$ infill. A brim is used to aid with bed adhesion. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{img/diff_housing.png}
+    \caption{The Housing for the Gearbox.}
+    \label{fig:C_DG_H} 
+\end{figure}
+
+\subsubsection*{The Attaching Cups}
+
+The Cup is the part that interfaces with main gear and the $\diameter 12$mm carbon fiber tube that serves as the rear axle. It has the same mounting patter as the Main gear ($6$mm spacing between the 2 M$3$ screws). The Cup extends the $12$mm cylinder outward to house the $12$mm rod. It also has $2 \times \diameter 2$mm holes at each end to interface with the axle and transfer the load. \\
+
+For printing, the cup is split into 2 parts axially (see Figure \ref{fig:C_DG_C}) and then printed flat to ensure the force moves along the layers and ensure ease of printability. It is printed at a layer height of $0.12$mm, has $3$ perimeters and a $25\%$ infill. A brim is used to aid with bed adhesion. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{img/cup.png}
+    \caption{The Attaching Cup.}
+    \label{fig:C_DG_C} 
+\end{figure}
+
+\subsubsection*{The Spacer}
+
+When looking at Figure \ref{fig:C_DG_Assem}, one can see that there are bearings on the outside as well, excluding the ones inside the housing. These are also 6901ZZ bearings and are responsible for the rotation of the housing itself. They are clamped from either end (discussed later). To ensure that there is $\rightarrow$
+\begin{enumerate}
+\item No play in the mounting of the differential gearbox
+\item Adequate separation between the bearing ends and the housing of the wall
+\item Ease of motion
+\end{enumerate}
+A spacer disk is mounted in between the two bearings. This disk also provides the pre-load needed in the gearbox stackup. It also ensures that the main gears in the differential mesh properly with the spider gears. Unlike the TPU spacer (Figure \ref{fig:C_TPUS}), this is made out of PLA. \\
+
+It is printed at a layer height of $0.12$mm, has $3$ perimeters and a $25\%$ infill. A brim is used to aid with bed adhesion. The height of the disk, nominally $2.00$mm can be adjusted to adjust the pre-load. The grove of the roller bearing (Figure \ref{fig:roller_bearing}). The disk has an outer diameter of $16.40$mm and an inner diameter of $12.4$mm. You can see the orange disk in Figure \ref{fig:C_DG_Spacer} doing its job.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{img/diff_spacer.png}
+    \caption{The Spacer Disk.}
+    \label{fig:C_DG_Spacer} 
+\end{figure}
+
+\subsection{The Rear Axle}
+
+The rear axle is what really brings everything together. The mounts for the rear axle hold the motor, the batteries, the needle roller bearings and the differential. They are also the end point of the 4 carbon fiber rods used to strengthen the vehicle. The parts for the rear axle are also among the largest parts. \\
+
+The rear axle houses the 2 BCWN-T-d12-IR bearings (Figure \ref{fig:needle_roller_bearing}). We start our journey with the Rear Axle Mount. It encompasses the whole rear axle and only consists of 2 parts that work in tandem.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/rear_assem.png}
+    \caption{The Rear Axle Assembly.}
+    \label{fig:C_R_Assem} 
+\end{figure}
+
+\subsubsection*{Rear Axle Mount Front}
+
+The front mount is the light blue colored part in Figure \ref{fig:C_R_Assem}. It houses the motor and serves as one half of the gearbox mount. It is one of the most complex parts. \\
+
+It houses holes for $6$ M$3 \times 8$mm screws that connect the motor to the mount. It also has space for $4$ M$3 \times 4$mm heat set inserts at the very end to interface with the back mount and space for $6$ M$3 \times 6$mm heat set inserts, $3$ on each side (see Figure \ref{fig:C_R_FM}) that allow it to interface with the parts that connect the front and the rear axle. The front mount also serves as the end point of the bottom set of $\diameter 3$mm rods. \\
+
+The part is printed with the forward facing face in Figure \ref{fig:C_R_Assem} pointing down, as shown in Figure \ref{fig:C_R_FM_P}. The part does need supports at the area where the motor mounts. It is printed at a layer height of $0.20$mm, has $3$ perimeters and a $25\%$ infill. A brim is used to aid with bed adhesion.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/rear_fmount.png}
+    \caption{The Front Mount.}
+    \label{fig:C_R_FM} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{img/rear_fmount_print.png}
+    \caption{The Front Mount in the Slicer.}
+    \label{fig:C_R_FM_P} 
+\end{figure}
+
+\subsubsection*{Rear Axle Mount Rear}
+
+The rear mount serves as a half to mount the BCWN-T-d12-IR as well as the 6901ZZ bearings. It's a fairly chunky piece. It uses 8 M$3 \times 8$mm screws that interface with the rest of the vehicle. This part serves as the end mount of the top $\diameter 3$mm carbon fiber rods. \\
+
+The part prints with the front face facing downward. It is printed at a layer height of $0.20$mm, has $3$ perimeters and a $25\%$ infill. A brim is used to aid with bed adhesion and prevent warping. Supports are not needed but appreciated. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/rear_bmount.png}
+    \caption{The Back Mount.}
+    \label{fig:C_R_BM} 
+\end{figure}
+
+The batteries mount above the rear axle and are shown in the next section.
+
+\subsection{The Center}
+
+This part ties the the two axles together. It houses the LiDAR, the Raspberry Pi, the ESC and the batteries. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/center_assem.png}
+    \caption{The Center Assembly.}
+    \label{fig:C_C_Assem} 
+\end{figure}
+
+\subsubsection*{Top Brace}
+
+The top brace is the main part that connects the motor mount to the steering column. The top supporting rods run directly, all the way through this. It is one of the two biggest parts of the entire vehicle. \\
+
+It connects to the motor mount (Rear axle mount front) with $6$ M$3 \time 16$mm screws and connects with the steering mount with $2$ M$3 \times 12$mm screws. It takes $2$ M$3 \times 6$m heat set inserts on the top surface for the LiDAR \& ESC mount. \\
+
+The part is printed with the rear facing surface pointing downward (the part is upright) and does not require any supports. The holes at the front in Figure \ref{fig:C_C_Top} are counter bore, but features are provided to help with printing. PreFlight can also be used to aid with counter bore bridging.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/top_br.png}
+    \caption{The Top Brace.}
+    \label{fig:C_C_Top} 
+\end{figure}
+
+The part is printed at a layer height of $0.20$mm, has $3$ perimeters and a $25\%$ infill. A brim is used to aid with bed adhesion and prevent the part from peeling off when printing.
+
+\subsubsection*{Bottom Left \& Bottom Right Brace}
+
+The bottom left and bottom right braces are just mirrored parts. They are tiny in comparison to the top brace. They help with connecting the top brace to the bottom pair of carbon fiber rods. They also interface with the motor mount (Rear axle mount front) on the same $6$ points as the top brace. They are wedged between the motor mount and the top brace. \\
+
+They are printed with either of the end, flat, sides pointing down. They do not need supports and are printed at a layer height of $0.20$mm, has $3$ perimeters and a $25\%$ infill. A brim is used to aid with bed adhesion and prevent the part from peeling off when printing.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/bl_br_br.png}
+    \caption{The Bottom Left and Right Brace.}
+    \label{fig:C_C_Bot} 
+\end{figure}
+
+\subsubsection*{Rear Bearing Mounts}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/rear_bearing_mount.png}
+    \caption{The Left and Right Bearing mounts.}
+    \label{fig:C_C_Back} 
+\end{figure}
+
+These parts go on the outside of the motor mount and top brace sandwich. They serve 2 purposes, one of them is holding the BCWN-T-d12-IR bearing and the other is holding the batteries. The battery straps go though this part. Each one of them is more or less a mirror but the right one has a larger loft for no apparent reason. \\
+
+They are printed with the bottom side facing down. They do not need supports and are printed at a layer height of $0.20$mm, has $3$ perimeters and a $25\%$ infill. A brim is used to aid with bed adhesion and prevent the part from peeling off when printing.
+
+\subsubsection*{LiDAR \& ESC mount}
+
+The LiDAR and ESC mount is one of the two largest parts on the entire vehicle. They mount spans almost the entire breadth of the vehicle. It mouns the ESC on one side, screws into the top brace, mounts the LiDAR and connects to one of the bottom screw holes of the Raspberry Pi. \\
+
+The part has holes to reduce its weight and a recess in on the top to accommodate for the LiDAR's electronics. The ESC has its fan removed and the screws from the shroud are used to mount. There are $3$ M$3 \times 6$mm heat set inserts to mount the LiDAR. The LiDAR uses $3$ M$3 \times 10$ countersunk screws. The mount prints on the face where the ESC mounts from. The part doesn't not need supports, but they are appreciated. It is printed at a layer height of $0.20$mm, has $3$ perimeters and a $25\%$ infill. A brim is used to aid with bed adhesion and prevent the part from peeling off when printing.
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=.8\textwidth]{img/lidar_mount.png}
+   \caption{The Lidar \& ESC mount.}
+   \label{fig:C_C_LM} 
+\end{figure}
+
+\subsection{Accessories}
 
 
 
