@@ -1,26 +1,99 @@
-Engineering materials
-====
+# WRO 2026 — Self-Driving Vehicle (Engineering Materials)
 
-This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022.
+Short project summary
+This repository contains the engineering documentation, photos, schematics, models and control software for our self-driven vehicle that participated in the WRO Future Engineers 2026 competition.
 
-## Content
+Status
+- Team: The Redacted
+- Competition: WRO Future Engineers — Season 2026
+- Status: In final stages of development
 
-* `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
-* `v-photos` contains 6 photos of the vehicle (from every side, from top and bottom)
-* `video` contains the video.md file with the link to a video where driving demonstration exists
-* `schemes` contains one or several schematic diagrams in form of JPEG, PNG or PDF of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
-* `src` contains code of control software for all components which were programmed to participate in the competition
-* `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
-* `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
+Table of Contents
+- [Content overview](#content-overview)
+- [Hardware & BOM](#hardware--bom)
+- [Software & Architecture](#software--architecture)
+- [Setup and Run](#setup-and-run)
+- [Demo video & media](#demo-video--media)
+- [Repository structure](#repository-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Introduction
+Content overview
+- t-photos: team photos (official and fun group photo)
+- v-photos: vehicle photos (front, back, sides, top, bottom)
+- video: video.md (link to driving demonstration)
+- schemes: schematic diagrams showing electronics, motors and wiring (JPEG/PNG/PDF)
+- src: control software for microcontrollers/SBC used in the vehicle
+- models: 3D-print / laser / CNC files used to produce vehicle parts
+- other: additional docs, datasets, instructions for uploading to SBC/SBM, etc.
 
-_This part must be filled by participants with the technical clarifications about the code: which modules the code consists of, how they are related to the electromechanical components of the vehicle, and what is the process to build/compile/upload the code to the vehicle’s controllers._
+Hardware & BOM
+- Main controller:
+- Motor drivers:
+- Motors:
+- Sensors: LIDAR, camera, etc
+- Power:
+- Peripherals:
+- Bill of Materials (BOM):
+  
+Software & Architecture
+- Languages: Python
+- Modules:
+  - core/vehicle_control — motor & sensor abstraction
+  - nav — navigation, path planning
+  - vision — camera processing (object detection/line following)
+  - utils — logging, config
+- Supported hardware targets:
+- Dependencies: list libraries and versions
+  
+Setup and Run
+Prerequisites
+- Hardware assembled and connected as described in `schemes/`
+- OS image for SBC if applicable (link to image)
+- Required packages:
 
-## How to prepare the repo based on the template
+Quick start
+1. Clone the repository:
+   git clone https://github.com/Spaceflakes/2026-FE-The-Rdacted.git
+2. Enter project directory and install dependencies:
+   cd 2026-FE-The-Rdacted/src
+   pip install -r requirements.txt
+3. Configure hardware:
+   - Edit `config/default.yaml` to match ports and sensors
+4. Run demo:
+   python run_demo.py --profile competition
 
-_Remove this section before the first commit to the repository_
+Testing
+- How to run unit/integration tests (if present)
+- How to run validation on hardware
 
-1. Clone this repo by using the `git clone` functionality.
-2. Remove `.git` directory
-3. [Initialize a new public repository on GitHub](https://github.com/new) by following instructions from "create a new repository on the command line" section (appeared after pressing "Create repository" button).
+Demo video & media
+- video/video.md — link to the demonstration video (YouTube or private link)
+- Add short timestamped notes explaining what judges should look for
+
+Repository structure
+Explain important files and where to find them:
+- /t-photos — team photos
+- /v-photos — vehicle photos
+- /schemes — wiring diagrams and schematics
+- /src — source code (see README inside /src for build/run details)
+- /models — CAD/STL files used for manufacturing
+- /video/video.md — demo video link
+- /other — datasets, upload instructions, extra docs
+
+Contributing
+- This is an engineering submission repository. If you want to re-use or adapt the project:
+  - Fork or use the template (do not edit this repository directly unless you are a team member).
+  - Open a PR for changes; include hardware used, test results and photos.
+- If this repository is a template, use GitHub's "Use this template" button to create a new repo for your team.
+
+License
+- Add a license file
+- Put short license note here and include LICENSE file at repo root.
+
+Contact
+- Team lead: Name — email@example.com
+
+Changelog
+- v1.0 — initial submission (date)
