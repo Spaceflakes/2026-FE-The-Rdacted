@@ -93,7 +93,7 @@ License
 - Put short license note here and include LICENSE file at repo root.
 
 Contact
-- Team lead: Name — email@example.com
+- Team lead: Name — spaceflakes@idkuremailcuzidontwannaexposeuremail.com
 
 Changelog
 - v1.0 — initial submission (date)
