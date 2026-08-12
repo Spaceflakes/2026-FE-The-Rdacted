@@ -11,47 +11,48 @@
 \contentsline {figure}{\numberline {11}{\ignorespaces The Needle Roller bearing.}}{14}{figure.caption.14}%
 \contentsline {figure}{\numberline {12}{\ignorespaces The 12 mm CF rod.}}{15}{figure.caption.15}%
 \contentsline {figure}{\numberline {13}{\ignorespaces The 3 mm PultrudedCF rod.}}{15}{figure.caption.16}%
-\contentsline {figure}{\numberline {14}{\ignorespaces The LM61460 in the VQFN-HR package.}}{18}{figure.caption.17}%
-\contentsline {figure}{\numberline {15}{\ignorespaces The TPS62932 in the SOT-583 package.}}{18}{figure.caption.18}%
-\contentsline {figure}{\numberline {16}{\ignorespaces The files for the schematic given by TI Workbench.}}{19}{figure.caption.19}%
-\contentsline {figure}{\numberline {17}{\ignorespaces The 3 pages of the schematic.}}{20}{figure.caption.20}%
-\contentsline {figure}{\numberline {18}{\ignorespaces The "edge cuts" layer.}}{21}{figure.caption.21}%
-\contentsline {figure}{\numberline {19}{\ignorespaces The fixed items layer.}}{22}{figure.caption.22}%
-\contentsline {figure}{\numberline {20}{\ignorespaces The final layout depicting the placement of all the components.}}{23}{figure.caption.23}%
-\contentsline {figure}{\numberline {21}{\ignorespaces The 4 copper layers. Layer$1$ $\rightarrow $ $4$.}}{24}{figure.caption.25}%
-\contentsline {figure}{\numberline {22}{\ignorespaces The rendered PCB.}}{25}{figure.caption.26}%
-\contentsline {figure}{\numberline {23}{\ignorespaces The solder paste on the pads after being applied with a stencil.}}{26}{figure.caption.27}%
-\contentsline {figure}{\numberline {24}{\ignorespaces The Interactive HTML BOM Tool.}}{27}{figure.caption.28}%
-\contentsline {figure}{\numberline {25}{\ignorespaces The Bodge Wire.}}{29}{figure.caption.29}%
-\contentsline {figure}{\numberline {26}{\ignorespaces The Onshape assembly.}}{31}{figure.caption.30}%
-\contentsline {figure}{\numberline {27}{\ignorespaces The Front Wheel Adapter Pin.}}{32}{figure.caption.32}%
-\contentsline {figure}{\numberline {28}{\ignorespaces The Steering Knuckle.}}{33}{figure.caption.34}%
-\contentsline {figure}{\numberline {29}{\ignorespaces The Steering Column.}}{33}{figure.caption.36}%
-\contentsline {figure}{\numberline {30}{\ignorespaces The Top Brace.}}{34}{figure.caption.37}%
-\contentsline {figure}{\numberline {31}{\ignorespaces The Bottom Brace.}}{34}{figure.caption.38}%
-\contentsline {figure}{\numberline {32}{\ignorespaces The Side Brace.}}{35}{figure.caption.39}%
-\contentsline {figure}{\numberline {33}{\ignorespaces The Servo Horn.}}{35}{figure.caption.41}%
-\contentsline {figure}{\numberline {34}{\ignorespaces The Steering Links}}{36}{figure.caption.43}%
-\contentsline {figure}{\numberline {35}{\ignorespaces The TPU Spacer.}}{37}{figure.caption.45}%
-\contentsline {figure}{\numberline {36}{\ignorespaces The Differential Gearbox.}}{37}{figure.caption.46}%
-\contentsline {figure}{\numberline {37}{\ignorespaces The Differential Gears}}{38}{figure.caption.48}%
-\contentsline {figure}{\numberline {38}{\ignorespaces The Spider Center.}}{39}{figure.caption.50}%
-\contentsline {figure}{\numberline {39}{\ignorespaces The Housing for the Gearbox.}}{40}{figure.caption.52}%
-\contentsline {figure}{\numberline {40}{\ignorespaces The Attaching Cup.}}{41}{figure.caption.54}%
-\contentsline {figure}{\numberline {41}{\ignorespaces The Spacer Disk.}}{42}{figure.caption.56}%
-\contentsline {figure}{\numberline {42}{\ignorespaces The Rear Axle Assembly.}}{43}{figure.caption.57}%
-\contentsline {figure}{\numberline {43}{\ignorespaces The Front Mount.}}{44}{figure.caption.59}%
-\contentsline {figure}{\numberline {44}{\ignorespaces The Front Mount in the Slicer.}}{44}{figure.caption.60}%
-\contentsline {figure}{\numberline {45}{\ignorespaces The Back Mount.}}{45}{figure.caption.62}%
-\contentsline {figure}{\numberline {46}{\ignorespaces The Center Assembly.}}{46}{figure.caption.63}%
-\contentsline {figure}{\numberline {47}{\ignorespaces The Top Brace.}}{47}{figure.caption.65}%
-\contentsline {figure}{\numberline {48}{\ignorespaces The Bottom Left and Right Brace.}}{48}{figure.caption.67}%
-\contentsline {figure}{\numberline {49}{\ignorespaces The Left and Right Bearing mounts.}}{48}{figure.caption.69}%
-\contentsline {figure}{\numberline {50}{\ignorespaces The Lidar \& ESC mount.}}{49}{figure.caption.71}%
-\contentsline {figure}{\numberline {51}{\ignorespaces The Wheel Hub.}}{50}{figure.caption.73}%
-\contentsline {figure}{\numberline {52}{\ignorespaces The Raspberry Pi Mount.}}{51}{figure.caption.75}%
-\contentsline {figure}{\numberline {53}{\ignorespaces The ESC Wire Mount.}}{51}{figure.caption.77}%
-\contentsline {figure}{\numberline {54}{\ignorespaces The Mold for the Polyurethane Tire.}}{52}{figure.caption.79}%
-\contentsline {figure}{\numberline {55}{\ignorespaces The Standoff Cutting Tool.}}{53}{figure.caption.81}%
-\contentsline {figure}{\numberline {56}{\ignorespaces The Axle Cutting Tool.}}{54}{figure.caption.83}%
-\contentsline {figure}{\numberline {57}{\ignorespaces The Axle Drilling Tool.}}{55}{figure.caption.85}%
+\contentsline {figure}{\numberline {14}{\ignorespaces The LM61460 in the VQFN-HR package.}}{20}{figure.caption.20}%
+\contentsline {figure}{\numberline {15}{\ignorespaces The TPS62932 in the SOT-583 package.}}{20}{figure.caption.21}%
+\contentsline {figure}{\numberline {16}{\ignorespaces The files for the schematic given by TI Workbench.}}{21}{figure.caption.22}%
+\contentsline {figure}{\numberline {17}{\ignorespaces The 3 pages of the schematic.}}{22}{figure.caption.23}%
+\contentsline {figure}{\numberline {18}{\ignorespaces The "edge cuts" layer.}}{23}{figure.caption.24}%
+\contentsline {figure}{\numberline {19}{\ignorespaces The fixed items layer.}}{24}{figure.caption.25}%
+\contentsline {figure}{\numberline {20}{\ignorespaces The final layout depicting the placement of all the components.}}{25}{figure.caption.26}%
+\contentsline {figure}{\numberline {21}{\ignorespaces The 4 copper layers. Layer$1$ $\rightarrow $ $4$.}}{26}{figure.caption.28}%
+\contentsline {figure}{\numberline {22}{\ignorespaces The rendered PCB.}}{27}{figure.caption.29}%
+\contentsline {figure}{\numberline {23}{\ignorespaces The solder paste on the pads after being applied with a stencil.}}{28}{figure.caption.30}%
+\contentsline {figure}{\numberline {24}{\ignorespaces The Interactive HTML BOM Tool.}}{29}{figure.caption.31}%
+\contentsline {figure}{\numberline {25}{\ignorespaces The Bodge Wire.}}{31}{figure.caption.32}%
+\contentsline {figure}{\numberline {26}{\ignorespaces The Onshape assembly.}}{33}{figure.caption.33}%
+\contentsline {figure}{\numberline {27}{\ignorespaces The Front Wheel Adapter Pin.}}{34}{figure.caption.35}%
+\contentsline {figure}{\numberline {28}{\ignorespaces The Steering Knuckle.}}{35}{figure.caption.37}%
+\contentsline {figure}{\numberline {29}{\ignorespaces The Steering Column.}}{35}{figure.caption.39}%
+\contentsline {figure}{\numberline {30}{\ignorespaces The Top Brace.}}{36}{figure.caption.40}%
+\contentsline {figure}{\numberline {31}{\ignorespaces The Bottom Brace.}}{36}{figure.caption.41}%
+\contentsline {figure}{\numberline {32}{\ignorespaces The Side Brace.}}{37}{figure.caption.42}%
+\contentsline {figure}{\numberline {33}{\ignorespaces The Servo Horn.}}{37}{figure.caption.44}%
+\contentsline {figure}{\numberline {34}{\ignorespaces The Steering Links}}{38}{figure.caption.46}%
+\contentsline {figure}{\numberline {35}{\ignorespaces The TPU Spacer.}}{39}{figure.caption.48}%
+\contentsline {figure}{\numberline {36}{\ignorespaces The Differential Gearbox.}}{39}{figure.caption.49}%
+\contentsline {figure}{\numberline {37}{\ignorespaces The Differential Gears}}{40}{figure.caption.51}%
+\contentsline {figure}{\numberline {38}{\ignorespaces The Spider Center.}}{41}{figure.caption.53}%
+\contentsline {figure}{\numberline {39}{\ignorespaces The Housing for the Gearbox.}}{42}{figure.caption.55}%
+\contentsline {figure}{\numberline {40}{\ignorespaces The Attaching Cup.}}{43}{figure.caption.57}%
+\contentsline {figure}{\numberline {41}{\ignorespaces The Spacer Disk.}}{44}{figure.caption.59}%
+\contentsline {figure}{\numberline {42}{\ignorespaces The Rear Axle Assembly.}}{45}{figure.caption.60}%
+\contentsline {figure}{\numberline {43}{\ignorespaces The Front Mount.}}{46}{figure.caption.62}%
+\contentsline {figure}{\numberline {44}{\ignorespaces The Front Mount in the Slicer.}}{46}{figure.caption.63}%
+\contentsline {figure}{\numberline {45}{\ignorespaces The Back Mount.}}{47}{figure.caption.65}%
+\contentsline {figure}{\numberline {46}{\ignorespaces The Center Assembly.}}{48}{figure.caption.66}%
+\contentsline {figure}{\numberline {47}{\ignorespaces The Top Brace.}}{49}{figure.caption.68}%
+\contentsline {figure}{\numberline {48}{\ignorespaces The Bottom Left and Right Brace.}}{50}{figure.caption.70}%
+\contentsline {figure}{\numberline {49}{\ignorespaces The Left and Right Bearing mounts.}}{50}{figure.caption.72}%
+\contentsline {figure}{\numberline {50}{\ignorespaces The Lidar \& ESC mount.}}{51}{figure.caption.74}%
+\contentsline {figure}{\numberline {51}{\ignorespaces The Wheel Hub.}}{52}{figure.caption.76}%
+\contentsline {figure}{\numberline {52}{\ignorespaces The Raspberry Pi Mount.}}{53}{figure.caption.78}%
+\contentsline {figure}{\numberline {53}{\ignorespaces The ESC Wire Mount.}}{53}{figure.caption.80}%
+\contentsline {figure}{\numberline {54}{\ignorespaces The Mold for the Polyurethane Tire.}}{54}{figure.caption.82}%
+\contentsline {figure}{\numberline {55}{\ignorespaces The Standoff Cutting Tool.}}{55}{figure.caption.84}%
+\contentsline {figure}{\numberline {56}{\ignorespaces The Axle Cutting Tool.}}{56}{figure.caption.86}%
+\contentsline {figure}{\numberline {57}{\ignorespaces The Axle Drilling Tool.}}{57}{figure.caption.88}%
+\contentsline {figure}{\numberline {58}{\ignorespaces ROS 2 System Control Architecture and Inter-Node Dataflow Diagram.}}{60}{figure.caption.94}%

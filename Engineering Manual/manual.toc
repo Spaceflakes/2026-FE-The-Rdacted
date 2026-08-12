@@ -8,25 +8,44 @@
 \contentsline {subsection}{\numberline {1.5}The Additional Hardware}{12}{subsection.1.5}%
 \contentsline {subsubsection}{\numberline {1.5.1}Bearings}{12}{subsubsection.1.5.1}%
 \contentsline {subsubsection}{\numberline {1.5.2}Carbon Fiber Tubes}{14}{subsubsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.6}Wheels}{15}{subsection.1.6}%
-\contentsline {section}{\numberline {2}PCB Assembly}{16}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Purpose}{16}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Form Factor}{17}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Selection of the ICs}{17}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}The 5.1V Rail}{17}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}The 8V Rail}{18}{subsubsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.4}The Schematic}{18}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}The Layout \& Routing}{21}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Assembly}{26}{subsection.2.6}%
-\contentsline {subsubsection}{\numberline {2.6.1}Advice}{27}{subsubsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.7}Mistakes \& Errors}{28}{subsection.2.7}%
-\contentsline {section}{\numberline {3}3D Prints \& CAD}{30}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Layout \& Wheelbase}{30}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}The Steering Assembly}{32}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}The Differential}{37}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}The Rear Axle}{42}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}The Center}{45}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Accessories}{49}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Tools}{52}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Notes}{55}{subsection.3.8}%
-\contentsline {section}{\numberline {4}OS and Configurations}{56}{section.4}%
+\contentsline {subsection}{\numberline {1.6}Wheels}{16}{subsection.1.6}%
+\contentsline {section}{\numberline {2}PCB Assembly}{18}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Purpose}{18}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Form Factor}{19}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Selection of the ICs}{19}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}The 5.1V Rail}{19}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}The 8V Rail}{20}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}The Schematic}{20}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}The Layout \& Routing}{23}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Assembly}{28}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Advice}{29}{subsubsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.7}Mistakes \& Errors}{30}{subsection.2.7}%
+\contentsline {section}{\numberline {3}3D Prints \& CAD}{32}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Layout \& Wheelbase}{32}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The Steering Assembly}{34}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The Differential}{39}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}The Rear Axle}{44}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}The Center}{47}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Accessories}{51}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Tools}{54}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Notes}{57}{subsection.3.8}%
+\contentsline {section}{\numberline {4}OS and Configurations}{58}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Camera ROS 2 Integration}{58}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Hardware PWM Configuration \& Tuning}{59}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Control Architecture \& Software System}{60}{section.5}%
+\contentsline {subsection}{\numberline {5.1}System Architecture \& ROS 2 Pipeline}{60}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}ROS 2 Topics \& Interfaces}{60}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Perception Algorithms \& Path Extraction}{61}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}RANSAC Wall Extraction \& Heading Offset}{61}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Dynamic Velocity-Dependent Braking}{61}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}Challenge Execution Logic}{61}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Round One: Obstacle-Free Wall Following}{61}{subsubsection.5.4.1}%
+\contentsline {paragraph}{Startup Sequence:}{61}{section*.95}%
+\contentsline {paragraph}{Wall-Following \& Turn Management:}{61}{section*.96}%
+\contentsline {subsubsection}{\numberline {5.4.2}Round Two: Pillar Mapping \& Parallel Parking}{61}{subsubsection.5.4.2}%
+\contentsline {paragraph}{Exit Maneuver \& Direction Initialization:}{61}{section*.97}%
+\contentsline {paragraph}{Pillar Clustering \& Camera Color Fusion:}{61}{section*.98}%
+\contentsline {paragraph}{Automated Parallel Parking Finalization:}{62}{section*.99}%
+\contentsline {section}{\numberline {6}Conclusion \& Acknowledgments}{63}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Document Production}{63}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Open-Source Acknowledgments}{63}{subsection.6.2}%

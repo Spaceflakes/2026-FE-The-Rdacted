@@ -11,12 +11,35 @@
 \usepackage{wasysym}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{positioning, shapes.geometric, arrows.meta, calc}
+\usepackage{enumitem}
 \usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
 \title{WRO Engineering Manual}
 \author{Team: The Redacted}
 \begin{document}
 
-\maketitle
+\begin{titlepage}
+    \sffamily 
+    \raggedright % Flushes all text to the left
+    
+    % --- LOGO ---
+    \begin{center}
+    	\includegraphics[width=0.9\textwidth]{logo.png}
+	\end{center} 
+	\vspace{3.5cm}
+    
+    % --- TITLE SECTION ---
+    {\fontsize{42}{48}\selectfont \textbf{Engineering Manual}}\\[0.2cm]
+    {\fontsize{30}{36}\selectfont WRO}\\[2cm] 
+    
+    \vfill 
+    
+    % --- AUTHOR SECTION ---
+    {\Large \textbf{Team The Redacted}}\\[0.3cm]
+    {\large \textcolor{darkgray}{\today}} % Gray date for subtle contrast
+    \vspace*{1cm}
+\end{titlepage}
 
 \pagebreak
 
@@ -232,9 +255,30 @@ The other rod used was a \textbf{3 mm outer diameter solid pultruded} rod. It is
 
 \subsection{Wheels}
 
-On the market
+\subsubsection*{Design Constraints \& Diameter Selection}
+The selection of the wheel diameter is one of the most critical foundational decisions in the vehicle's architecture, as it directly locks in ground clearance, overall vehicle height, wheelbase geometry, and internal volume distribution. \\
 
+Two strict physical constraints dictated the wheel sizing. First, the maximum overall height of the vehicle had to remain strictly under $80\,\text{mm}$ to ensure the YD-LiDAR X4 Pro maintains an unobstructed $360^\circ$ laser line sweep at a height of $90\,\text{mm}$, which is well clear of the $100\,\text{mm}$ arena perimeter walls. Second, the ground clearance had to accommodate the Surpass Hobby 3674 rear drive motor, which has an outer diameter of $36\,\text{mm}$. To prevent the motor housing from dragging against flat ground without suspension, the wheel diameter had to comfortably exceed $36\,\text{mm}$. \\
 
+In previous competition iterations, $65\,\text{mm}$ wheels were utilized. However, they proved excessively large, creating severe vertical congestion between the drive motor, chassis braces, and LiDAR platform. Consequently, a target wheel diameter of $\approx 50\,\text{mm}$ ($48$--$50\,\text{mm}$) was selected, offering adequate ground clearance for the $36\,\text{mm}$ motor while maintaining a compact vertical profile. \\
+
+\subsubsection*{Commercial Evaluation \& Shore Hardness Selection}
+Commercially available $2$-inch ($48\,\text{mm}$) FingerTech Combat Robot wheels were initially evaluated due to their high-traction tread and $40\text{A}$ durometer rating. \\
+
+The durometer rating measures an elastomer's resistance to indentation on the Shore A scale, where lower values ($20\text{A}$--$30\text{A}$) indicate soft, gel-like compounds, and higher values ($70\text{A}$--$90\text{A}$) represent rigid plastics. A hardness of \textbf{40\text{A} Shore Hardness} represents the optimal balance for autonomous racing, providing exceptional surface traction and grip on the track mat without disintegrating or tearing under high motor acceleration torque. \\
+
+Because $2$-inch $40\text{A}$ combat wheels were unavailable domestically in India and prohibitively expensive to import, a custom in-house casting process was developed instead. 
+
+\subsubsection*{Manufacturing \& Polyurethane Casting Procedure}
+To fabricate custom $48\,\text{mm}$ high-traction tires, a two-part casting process was established using SLA resin 3D-printed molds and PLA wheel hubs. The Polyurethane selected was a 2 part 10:4 ratio 40A mixture made by Aditya Silicone. Standard teflon based mold release spray was used. \textit{Please ensure proper PPE and safety when working with these materials.} \\
+
+For the core wheel hub fabrication (\texttt{Wheel Hub.step}, see Figure \ref{fig:C_W_H}), the part is 3D printed in PLA with an $18\,\text{mm}$ width. To ensure a permanent mechanical bond between the printed hub and the cast tire, the outer cylindrical contact surface is printed with a "Fuzzy Skin" texture ($0.1\,\text{mm}$ thickness, $0.2\,\text{mm}$ density), creating microscopic interlocks for the curing compound. \\
+
+For the precision mold fabrication (\texttt{Tools/Tire Mold.step}, see Figure \ref{fig:C_W_Mold}), a two-part split mold was 3D printed using Stereolithography (SLA) resin. SLA resin was selected over FDM because its smooth surface finish eliminates layer lines, allowing clean demolding without requiring draft angles. The mold halves clamp together using four $\text{M3} \times 30\,\text{mm}$ screws, washers, and $\text{M3}$ hex nuts. \\
+
+During the polyurethane casting phase, a two-part liquid Polyurethane elastomer formulated to $40\text{A}$ Shore hardness is mixed, degassed to remove air bubbles, and poured through the mold's entry port until liquid emerges from the riser exit port. After a $24$-hour cure cycle, the mold is unbolted, producing a balanced, high-traction polyurethane tire bonded securely to the PLA wheel hub. \\
+
+A file called \texttt{Castings.csv} contains all the details of each and every individual castings, including Part A and Part B ratios, weights and remarks. It can be found in the \texttt{Other} folder.
 
 \pagebreak
 
@@ -1023,18 +1067,189 @@ Thanks again to the Orca Slicer and the PreFlight Slicer teams for the amazing a
 \section{OS and Configurations}
 
 
+The Raspberry Pi uses a $64$GB SD card. It is flashed with Ubuntu 22.04.5 Server. This is used with ROS 2 Humble Hawksbill. What is ROS and why use it?\\
 
+ROS (Robot Operating System) is an open-source robotics middleware framework. Rather than a traditional operating system like Linux or Windows, ROS acts as a communication backbone. It connects the main compute board (e.g., Raspberry Pi) to your sensors (LiDAR, camera, IMU) and motor controllers, allowing different software modules to send data to each other seamlessly. \\
 
+\textbf{Reasons to use ROS}
+\begin{enumerate}
+\item \textbf{Process Decoupling}: Runs perception, navigation, and motor control as separate, independent nodes. A crash or lag in image processing won't freeze the real-time steering/drive loop.
+\item \textbf{Automated Frame Transformations (tf2)}: Computes precise spatial math and coordinate transforms between different physical points on the car (e.g., center of mass $\rightarrow$ LiDAR offset $\rightarrow$ camera offset).
+\item \textbf{Sensor Synchronization}: Provides built-in tools (message filters) to align high-bandwidth feeds (camera frames and 2D LiDAR scans) with low-level IMU and encoder data.
+\item \textbf{Data Logging \& Offline Replay (rosbag)}: Records full track run data to replay offline, letting you refine algorithms and tune controllers without physical track time or draining LiPo batteries.
+\item \textbf{Live Visualization (RViz)}: Displays real-time 2D LiDAR sweeps, camera overlays, and projected path trajectories live on screen during testing.
+\item \textbf{WRO Rubric Alignment}: Fulfills competition evaluation criteria for software modularity, state-machine design, and code reproducibility required in the engineering journal and GitHub repository (refer to README.md).
+\end{enumerate}
 
+Hence ROS was used. Why Humble Hawksbill? Because it was the latest stable release at the time of starting this. \\
 
+\subsection{Camera ROS 2 Integration}
 
+Ubuntu has a lot of driver issues, especially when running it on an SBC like a Raspberry Pi. They are annoying but navigable.
 
+\subsubsection*{Driver Constraints \& Hardware Sensor Binning}
+Configuring the Arducam IMX219 ($175^\circ$ FOV) on Ubuntu 22.04 LTS (64-bit) requires modern \texttt{libcamera} overlays rather than legacy MMAL drivers. To maintain the full field-of-view without cropping or high CPU overhead, the sensor's native \textbf{hardware binning (subsampling)} mode is utilized. This mode samples the entire $3280 \times 2464$ sensor plane but combines pixels on-chip down to $640 \times 480$, preserving the full $175^\circ$ FOV while drastically reducing transport latency for real-time ROS 2 inference.
 
+\subsubsection*{Configuration \& Node Execution}
+Configure the sensor overlay in \texttt{/boot/firmware/config.txt} (\texttt{start\_x=1}, \texttt{gpu\_mem=128}, \texttt{dtoverlay=imx219}) and reboot. 
 
+After installing \texttt{ros-humble-camera-ros}, launch the camera node in binned $640 \times 480$ \texttt{RGB888} format to publish to  image/raw:
+\begin{verbatim}
+ros2 run camera_ros camera_node --ros-args \
+  -p format:="RGB888" -p width:=640 -p height:=480
+\end{verbatim}
 
+\subsection{Hardware PWM Configuration \& Tuning}
 
+\subsubsection*{Pinout \& Driver Setup}
+Dual-channel hardware PWM on the Raspberry Pi 4B utilizes PWM0 (GPIO 12 / Pin 32) and PWM1 (GPIO 13 / Pin 33) operating at 50~Hz ($20\,\text{ms}$ period). Because the PWM hardware clock controller shares resources with onboard audio, audio must be disabled in firmware and blacklisted in the kernel:
 
+\begin{enumerate}
+    \item \textbf{Firmware Overlay:} Add \texttt{dtoverlay=pwm-2chan,pin=12,func=4,pin2=13,func2=4} and \texttt{dtparam=audio=off} to \texttt{/boot/firmware/config.txt}.
+    \item \textbf{Kernel Blacklisting:} Blacklist the audio module by adding \texttt{blacklist snd\_bcm2835} to \texttt{/etc/modprobe.d/raspi-blacklist.conf}.
+\end{enumerate}
 
+\subsubsection*{Servo Pulse Limits \& Power Stability}
+The S2500M steering servo is calibrated at 50~Hz with strict pulse boundaries:
+\begin{itemize}
+    \item \textbf{Pulse Boundaries:} Neutral at $1500\,\mu\text{s}$, minimum safe pulse at $700\,\mu\text{s}$ ($\approx 0^\circ$), and maximum safe pulse at $2300\,\mu\text{s}$ ($\approx 180^\circ$).
+    \item \textbf{Thermal/Current Throttling:} Exceeding $2300\,\mu\text{s}$ forces the servo against mechanical hard stops, triggering internal thermal throttling with 5-second recovery delays.
+    \item \textbf{Power Integrity:} Requires a common ground path across the Pi, HAT, and power rail, along with a $470\,\mu\text{F}$ decoupling capacitor across 5V/GND to absorb inrush spikes.
+\end{itemize}
 
+\subsubsection*{Linux Sysfs Execution Sequence}
+When interfacing via \texttt{/sys/class/pwm/pwmchip0/}, write sysfs parameters in strict order:
+\begin{enumerate}
+    \item Disable output (\texttt{enable = 0}).
+    \item Set period first (\texttt{period = 20000000}).
+    \item Set pulse width second (\texttt{duty\_cycle = 1500000}).
+    \item Enable output (\texttt{enable = 1}).
+\end{enumerate}
+
+\pagebreak
+
+\section{Control Architecture \& Software System}
+
+\subsection{System Architecture \& ROS 2 Pipeline}
+The software stack is structured as a modular ROS 2 architecture comprising three primary subsystems: Perception, Decision \& Control, and Mobility/Actuation. Inter-node communication relies on standard ROS 2 topics to maintain real-time responsiveness.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[
+    node distance = 1.2cm and 1.5cm,
+    sensor/.style = {rectangle, draw, rounded corners=3pt, fill=orange!10, thick, align=center, inner sep=6pt, font=\small},
+    nodeblock/.style = {rectangle, draw, rounded corners=4pt, fill=blue!5, thick, align=left, inner sep=8pt, font=\small},
+    arrow/.style = {-{Stealth[length=2.5mm]}, thick},
+    topicalign/.style = {font=\footnotesize\ttfamily, fill=white, inner sep=2pt}
+]
+
+    % Sensor Nodes
+    \node (lidar) [sensor] {\textbf{YD-LiDAR X4 Pro}\\(15\,Hz)};
+    \node (camera) [sensor, right=2.0cm of lidar] {\textbf{Arducam IMX219}\\($175^\circ$\,FOV)};
+
+    % Decision / Control Node
+    \node (control) [nodeblock, below=1.5cm of $(lidar.south)!0.5!(camera.south)$, anchor=north] {
+        \textbf{\large /control Node}\\[4pt]
+        \begin{minipage}{9.2cm}
+        \begin{itemize}[leftmargin=12pt, itemsep=1pt, topsep=2pt]
+            \item RANSAC Wall Line Extraction \& Heading Offset Calculation
+            \item Pillar Clustering \& Camera ROI Color Query
+            \item Dynamic Velocity \& Braking Distance Calculation
+            \item State Machine Logic \& Lap/Turn Counter
+            \item RViz Marker Publisher (\texttt{/visualization\_marker})
+        \end{itemize}
+        \end{minipage}
+    };
+
+    % Mobility / Actuation Node
+    \node (mobility) [nodeblock, below=1.8cm of control.south, anchor=north] {
+        \textbf{\large /mobility Node}\\[4pt]
+        \begin{minipage}{9.2cm}
+        \begin{itemize}[leftmargin=12pt, itemsep=1pt, topsep=2pt]
+            \item Hardware PWM Driver (\texttt{/sys/class/pwm})
+            \item Servo Pulse Boundary Mapping ($700\,\mu\text{s}$ -- $2300\,\mu\text{s}$)
+            \item Motor Throttle Duty Cycle Mapping ($-100$ to $+100$)
+        \end{itemize}
+        \end{minipage}
+    };
+
+    % Sensor Dataflow Arrows
+    \draw [arrow] (lidar.south) -- (lidar.south |- control.north) 
+        node[midway, topicalign] {/scan};
+    \draw [arrow] (camera.south) -- (camera.south |- control.north) 
+        node[midway, topicalign] {/image\_raw};
+
+    % Mobility Control Arrows
+    \draw [arrow] ($(control.south)!0.3!(control.south west)$) -- ($(mobility.north)!0.3!(mobility.north west)$) 
+        node[midway, topicalign] {/throttle};
+    \draw [arrow] ($(control.south)!0.3!(control.south east)$) -- ($(mobility.north)!0.3!(mobility.north east)$) 
+        node[midway, topicalign] {/steer};
+
+\end{tikzpicture}
+\caption{ROS 2 System Control Architecture and Inter-Node Dataflow Diagram.}
+\label{fig:control_architecture}
+\end{figure}
+
+\subsection{ROS 2 Topics \& Interfaces}
+\begin{itemize}
+    \item \textbf{\texttt{/scan} Topic (\texttt{sensor\_msgs/msg/LaserScan}):} Published by the LiDAR node at a nominal frequency of $15\,\text{Hz}$, containing 2D range arrays over $360^\circ$.
+    \item \textbf{\texttt{/steer} Topic (\texttt{std\_msgs/msg/Float32}):} Published by the \texttt{/control} node to command target Ackermann steering angles. The \texttt{/mobility} node maps these commands to PWM duty cycles ($700\,\mu\text{s}$ to $2300\,\mu\text{s}$) on GPIO 12.
+    \item \textbf{\texttt{/throttle} Topic (\texttt{std\_msgs/msg/Int8}):} Published by the \texttt{/control} node to set motor velocity demands from $-100$ (full braking / reverse) to $+100$ (maximum forward acceleration), with $0$ representing neutral.
+    \item \textbf{\texttt{/visualization\_marker} Topic (\texttt{visualization\_msgs/msg/Marker}):} Streams 3D geometric markers to RViz to display vehicle position, extracted wall vectors, and mapped pillar locations.
+\end{itemize}
+
+\subsection{Perception Algorithms \& Path Extraction}
+
+\subsubsection{RANSAC Wall Extraction \& Heading Offset}
+2D range arrays from \texttt{/scan} within the perception radius are processed using a Random Sample Consensus (RANSAC) line-fitting algorithm to extract straight wall vectors. The controller calculates the lateral offset error $e_d$ and heading angular error $\theta$ relative to the wall vector to derive the Ackermann steering command $\delta$:
+\begin{equation}
+\delta = K_p \cdot \theta + K_d \cdot e_d
+\end{equation}
+where $K_p$ and $K_d$ represent proportional and derivative control gains.
+
+\subsubsection{Dynamic Velocity-Dependent Braking}
+To prevent cornering overshoot, the braking initiation distance $d_{\text{brake}}$ is calculated dynamically as a function of current vehicle velocity $v$:
+\begin{equation}
+d_{\text{brake}} = d_{\text{min}} + k_v \cdot v^2
+\end{equation}
+where $d_{\text{min}}$ is the baseline stopping distance and $k_v$ is an empirical braking coefficient.
+
+\subsection{Challenge Execution Logic}
+
+\subsubsection{Round One: Obstacle-Free Wall Following}
+\paragraph{Startup Sequence:} Pressing the hardware start switch initiates a non-blocking startup delay. This allows the LiDAR motor to reach nominal operating speed ($15\,\text{Hz}$) and ensures team members clear the operational area.
+
+\paragraph{Wall-Following \& Turn Management:} The \texttt{/control} node evaluates wall vectors to execute directional turns, adjusts dynamic velocity/braking thresholds, and tracks completed turns and laps.
+
+\subsubsection{Round Two: Pillar Mapping \& Parallel Parking}
+\paragraph{Exit Maneuver \& Direction Initialization:} Operation begins with an automated exit sequence from the parallel parking bay, after which the primary circuit direction is established.
+
+\paragraph{Pillar Clustering \& Camera Color Fusion:} The \texttt{/control} node clusters contiguous points in \texttt{/scan} data to detect cylindrical pillars, computing their range and bearing angle $\phi$. The node queries the wide-angle camera for average color values (RGB/HSV) within the Region of Interest (ROI) corresponding to bearing $\phi$. The identified color (Red/Green) is logged on the occupancy map to dictate navigation paths (e.g., passing Red pillars on the right, Green on the left).
+
+\paragraph{Automated Parallel Parking Finalization:} Upon completing the pillar circuit, the vehicle transitions into parallel parking mode, utilizing lateral wall range measurements to execute a multi-point alignment into the parking bay.
+
+\pagebreak
+
+\section{Conclusion \& Acknowledgments}
+
+Building our autonomous vehicle for the WRO Future Engineers challenge has been an invaluable journey of iterative design, engineering trade-offs, and practical problem-solving. From casting custom $40\text{A}$ polyurethane tires and designing a 4-layer PCB hat to configuring ROS 2 nodes and tuning hardware PWM timings, every sub-assembly represents hands-on learning and technical growth.
+
+\subsection{Document Production}
+This manual and technical documentation suite were authored using \LaTeX{} and compiled using \textbf{TeXmaker}. In the spirit of open collaboration, all CAD STEP models, schematics, and hardware BOMs are published under the GNU Affero General Public License (AGPLv3) for the robotics community.
+
+\subsection{Open-Source Acknowledgments}
+This project relies heavily on the open-source ecosystem and accessible software platforms. We express our gratitude to the developers, maintainers, and communities behind the following tools:
+
+\begin{itemize}
+    \item \textbf{TeXmaker \& \LaTeX{}:} For providing a reliable typesetting environment for technical manual generation.
+    \item \textbf{KiCAD:} For enabling 4-layer PCB schematic capture, routing, and 3D visualization.
+    \item \textbf{Orca Slicer \& PreFlight Slicer:} For advanced toolpath generation, Arachne wall engines, and precise 3D printing execution.
+    \item \textbf{ROS 2 (Humble Hawksbill):} For supplying a robust middleware framework for robotics perception and node communication.
+    \item \textbf{Onshape:} For flexible 3D CAD modeling and parametric assembly management.
+    \item \textbf{Interactive HTML BOM:} For generating interactive assembly guides for surface-mount soldering.
+    \item \textbf{Linux \& Raspberry Pi Community:} For maintaining the embedded drivers, overlays, and hardware documentation.
+\end{itemize}
+
+Thank you to the WRO organizers, judges, fellow competitors, and the broader open-source community for making this journey possible.
 
 \end{document}
