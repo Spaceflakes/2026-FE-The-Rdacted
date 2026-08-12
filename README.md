@@ -10,6 +10,7 @@
 	
 ## Content
 ### **Folders**
+* `PCBA` contains the complete set of KiCad Printed Circuit Board (PCB) files, manufacturing outputs, and documentation required to view, modify, assemble, and produce this board.
 * `t-photos` contains 1 formal image and 2 informal images
 * `v-photos` contains 6 photos of the vehicle (from every side, from top and bottom)
 * `video` contains the video.md file with the link to a video where driving demonstration exists
@@ -69,11 +70,11 @@
 Members:
 1) Anvay Jain
 
-In Grade 9 at the Sanskaar Valley School, proud brother of Siddesh, and (proclaimed) head of this repo. First time in participation, but second time visiting the Competition... I like Space, Science, and KSP. Oh, and math. Lots of math.
+In Grade 9 at the Sanskaar Valley School, proud brother of Siddesh, and head of this repo. First time in participation, but second time visiting the Competition... I like Space, Science, and KSP and math.
 
 2) Siddesh Jain
 
-12th Grader in Billabong High, third time in WRO, the lead engineer and the head of the developement team, responsible for the CAD and all the choices. Races FPV drones and likes math. Also is an idiot.
+12th Grader in Billabong High, third time in WRO, the lead engineer and the head of the developement team, responsible for the CAD and all the choices. Races FPV drones and likes math.
    
 3) Prayash
 
@@ -102,19 +103,19 @@ Space for your bio
 
 ## Hardware Materials
 
-| Name |	Link |	Rate per part (in Rs.) |
-|------|------|------|
-| Rpi 4B/5	| https://www.raspberrypi.com/products/raspberry-pi-5 | -	|	
-| LiDAR	| https://robu.in/product/ydlidar-x4-pro-360-degree-ros-scanner-for-navigation-collision-avoidance-10m/#tab-specification	| 8159 |	
-| Servo	| https://robu.in/product/surpass-hobby-25kg-s2500m-servo/	| 1500 |	
+| Name |	Link |
+|------|------|
+| Rpi 4B/5	| https://www.raspberrypi.com/products/raspberry-pi-5 |
+| LiDAR	| https://robu.in/product/ydlidar-x4-pro-360-degree-ros-scanner-for-navigation-collision-avoidance-10m/#tab-specification|
+| Servo	| https://robu.in/product/surpass-hobby-25kg-s2500m-servo/	|	
 | Wheels |	https://robu.in/product/65mm-robot-smart-car-12-rim-wheel-blue/ |	167 |	
-| Pi Camera	| https://robu.in/product/arducam-8mp-imx219-175-degree-ultra-wide-angle-raspberry-pi-camera-module-compatible-with-raspberry-pi-4-model-b-pi-3-3b-and-pi-zero-2w/ |	2090	|	
-|Stepdown Module | https://robu.in/product/mini560-dc-5v-5a-step-down-stabilized-module/ | 94 |		
-| ESC + Motor |	https://www.hobbywingdirect.com/collections/quicrun-brushless-system/products/quicrun-wp-10bl120-sl-system-g2?variant=41474386854003 |	15000 |	
-| Battery |	- |	1500 |		
-| Gears | - |	2500 |		
-| PCB | - |	2000 |		
-| CF | - |	1500 |	
+| Pi Camera	| https://robu.in/product/arducam-8mp-imx219-175-degree-ultra-wide-angle-raspberry-pi-camera-module-compatible-with-raspberry-pi-4-model-b-pi-3-3b-and-pi-zero-2w/ |
+|Stepdown Module | https://robu.in/product/mini560-dc-5v-5a-step-down-stabilized-module/ |\	
+| ESC + Motor |	https://www.hobbywingdirect.com/collections/quicrun-brushless-system/products/quicrun-wp-10bl120-sl-system-g2?variant=41474386854003 |
+| Battery |	- |	
+| Gears | - |		
+| PCB | - |		
+| CF | - |
 
 ### PCB Design & Prototype PCB
 
