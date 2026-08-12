@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.3)  10 AUG 2026 15:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.3)  12 AUG 2026 10:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -313,65 +313,106 @@ Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
 )
+(/usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen165
+\lightrulewidth=\dimen166
+\cmidrulewidth=\dimen167
+\belowrulesep=\dimen168
+\belowbottomsep=\dimen169
+\aboverulesep=\dimen170
+\abovetopsep=\dimen171
+\cmidrulesep=\dimen172
+\cmidrulekern=\dimen173
+\defaultaddspace=\dimen174
+\@cmidla=\count299
+\@cmidlb=\count300
+\@aboverulesep=\dimen175
+\@belowrulesep=\dimen176
+\@thisruleclass=\count301
+\@lastruleclass=\count302
+\@thisrulewidth=\dimen177
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen178
+\ar@mcellbox=\box56
+\extrarowheight=\dimen179
+\NC@list=\toks27
+\extratabsurround=\skip55
+\backup@length=\skip56
+\ar@cellbox=\box57
+)
+\TX@col@width=\dimen180
+\TX@old@table=\dimen181
+\TX@old@col=\dimen182
+\TX@target=\dimen183
+\TX@delta=\dimen184
+\TX@cols=\count303
+\TX@ftn=\toks28
+)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
 (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count299
-\Gm@cntv=\count300
-\c@Gm@tempcnt=\count301
-\Gm@bindingoffset=\dimen165
-\Gm@wd@mp=\dimen166
-\Gm@odd@mp=\dimen167
-\Gm@even@mp=\dimen168
-\Gm@layoutwidth=\dimen169
-\Gm@layoutheight=\dimen170
-\Gm@layouthoffset=\dimen171
-\Gm@layoutvoffset=\dimen172
-\Gm@dimlist=\toks27
+\Gm@cnth=\count304
+\Gm@cntv=\count305
+\c@Gm@tempcnt=\count306
+\Gm@bindingoffset=\dimen185
+\Gm@wd@mp=\dimen186
+\Gm@odd@mp=\dimen187
+\Gm@even@mp=\dimen188
+\Gm@layoutwidth=\dimen189
+\Gm@layoutheight=\dimen190
+\Gm@layouthoffset=\dimen191
+\Gm@layoutvoffset=\dimen192
+\Gm@dimlist=\toks29
 )
 (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count302
-\l__pdf_internal_box=\box56
+\l__color_backend_stack_int=\count307
+\l__pdf_internal_box=\box58
 )
 (./manual.aux)
 \openout1 = `manual.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count303
-\scratchdimen=\dimen173
-\scratchbox=\box57
-\nofMPsegments=\count304
-\nofMParguments=\count305
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count306
-\MPscratchDim=\dimen174
-\MPnumerator=\count307
-\makeMPintoPDFobject=\count308
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count308
+\scratchdimen=\dimen193
+\scratchbox=\box59
+\nofMPsegments=\count309
+\nofMParguments=\count310
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count311
+\MPscratchDim=\dimen194
+\MPnumerator=\count312
+\makeMPintoPDFobject=\count313
+\everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -384,7 +425,7 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 15.
+Package hyperref Info: Link coloring OFF on input line 17.
 
 (./manual.out) (./manual.out)
 \@outlinefile=\write3
@@ -425,18 +466,18 @@ Package hyperref Info: Link coloring OFF on input line 15.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
 
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 18
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 20
 .
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/wasysym/uwasy.fd
@@ -461,11 +502,6 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
@@ -485,45 +521,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-<img/lidar.jpg, id=268, 2007.5pt x 2007.5pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+<img/lidar.jpg, id=297, 2007.5pt x 2007.5pt>
 File: img/lidar.jpg Graphic file (type jpg)
 <use img/lidar.jpg>
-Package pdftex.def Info: img/lidar.jpg  used on input line 47.
+Package pdftex.def Info: img/lidar.jpg  used on input line 49.
 (pdftex.def)             Requested size: 241.84843pt x 241.83919pt.
 
 
 [5]
-<img/camera.jpg, id=274, 1606.0pt x 1606.0pt>
+<img/camera.jpg, id=303, 1606.0pt x 1606.0pt>
 File: img/camera.jpg Graphic file (type jpg)
 <use img/camera.jpg>
-Package pdftex.def Info: img/camera.jpg  used on input line 56.
+Package pdftex.def Info: img/camera.jpg  used on input line 58.
 (pdftex.def)             Requested size: 241.84843pt x 241.84532pt.
 
 
 [6 <./img/lidar.jpg> <./img/camera.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
-<img/rpi4b.png, id=280, 1927.2pt x 1084.05pt>
+<img/rpi4b.png, id=309, 1927.2pt x 1084.05pt>
 File: img/rpi4b.png Graphic file (type png)
 <use img/rpi4b.png>
-Package pdftex.def Info: img/rpi4b.png  used on input line 80.
+Package pdftex.def Info: img/rpi4b.png  used on input line 82.
 (pdftex.def)             Requested size: 386.95897pt x 217.64977pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
 
 
 [7 <./img/rpi4b.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
@@ -532,734 +568,867 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
-<img/motor.jpg, id=293, 246.6816pt x 246.6816pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+<img/motor.jpg, id=322, 246.6816pt x 246.6816pt>
 File: img/motor.jpg Graphic file (type jpg)
 <use img/motor.jpg>
-Package pdftex.def Info: img/motor.jpg  used on input line 99.
+Package pdftex.def Info: img/motor.jpg  used on input line 101.
 (pdftex.def)             Requested size: 241.84843pt x 241.85545pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
 
 
 [8 <./img/motor.jpg>]
-<img/esc.jpg, id=298, 1003.75pt x 1003.75pt>
+<img/esc.jpg, id=327, 1003.75pt x 1003.75pt>
 File: img/esc.jpg Graphic file (type jpg)
 <use img/esc.jpg>
-Package pdftex.def Info: img/esc.jpg  used on input line 108.
+Package pdftex.def Info: img/esc.jpg  used on input line 110.
 (pdftex.def)             Requested size: 241.84843pt x 241.83919pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
 
-<img/configurator.jpg, id=299, 1606.0pt x 1606.0pt>
+<img/configurator.jpg, id=328, 1606.0pt x 1606.0pt>
 File: img/configurator.jpg Graphic file (type jpg)
 <use img/configurator.jpg>
-Package pdftex.def Info: img/configurator.jpg  used on input line 117.
+Package pdftex.def Info: img/configurator.jpg  used on input line 119.
 (pdftex.def)             Requested size: 145.11053pt x 145.09738pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
 
 
 [9 <./img/esc.jpg> <./img/configurator.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
-<img/servo.jpg, id=304, 1607.00375pt x 1607.00375pt>
+<img/servo.jpg, id=333, 1607.00375pt x 1607.00375pt>
 File: img/servo.jpg Graphic file (type jpg)
 <use img/servo.jpg>
-Package pdftex.def Info: img/servo.jpg  used on input line 130.
+Package pdftex.def Info: img/servo.jpg  used on input line 132.
 (pdftex.def)             Requested size: 241.84843pt x 241.84935pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
-
- []
-
-<img/battery.jpg, id=305, 803.0pt x 803.0pt>
-File: img/battery.jpg Graphic file (type jpg)
-<use img/battery.jpg>
-Package pdftex.def Info: img/battery.jpg  used on input line 145.
-(pdftex.def)             Requested size: 241.84843pt x 241.84532pt.
-
-
-[10 <./img/servo.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
-
- []
-
-<img/needle_roller.png, id=311, 602.25pt x 602.25pt>
-File: img/needle_roller.png Graphic file (type png)
-<use img/needle_roller.png>
-Package pdftex.def Info: img/needle_roller.png  used on input line 162.
-(pdftex.def)             Requested size: 241.84843pt x 241.85144pt.
-
-
-[11 <./img/battery.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
-<img/roller.png, id=317, 803.0pt x 803.0pt>
+<img/battery.jpg, id=334, 803.0pt x 803.0pt>
+File: img/battery.jpg Graphic file (type jpg)
+<use img/battery.jpg>
+Package pdftex.def Info: img/battery.jpg  used on input line 171.
+(pdftex.def)             Requested size: 241.84843pt x 241.84532pt.
+
+
+[10 <./img/servo.jpg>]
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+<img/needle_roller.png, id=348, 602.25pt x 602.25pt>
+File: img/needle_roller.png Graphic file (type png)
+<use img/needle_roller.png>
+Package pdftex.def Info: img/needle_roller.png  used on input line 188.
+(pdftex.def)             Requested size: 241.84843pt x 241.85144pt.
+
+
+[12 <./img/battery.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+
+ []
+
+<img/roller.png, id=354, 803.0pt x 803.0pt>
 File: img/roller.png Graphic file (type png)
 <use img/roller.png>
-Package pdftex.def Info: img/roller.png  used on input line 171.
+Package pdftex.def Info: img/roller.png  used on input line 197.
 (pdftex.def)             Requested size: 241.84843pt x 241.84532pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
 
 
-[12 <./img/needle_roller.png> <./img/roller.png>]
-<img/needle_roller.jpeg, id=323, 458.71375pt x 438.63875pt>
+[13 <./img/needle_roller.png> <./img/roller.png>]
+<img/needle_roller.jpeg, id=361, 458.71375pt x 438.63875pt>
 File: img/needle_roller.jpeg Graphic file (type jpg)
 <use img/needle_roller.jpeg>
-Package pdftex.def Info: img/needle_roller.jpeg  used on input line 180.
+Package pdftex.def Info: img/needle_roller.jpeg  used on input line 206.
 (pdftex.def)             Requested size: 241.84843pt x 231.26598pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
-<img/12cf.png, id=324, 803.0pt x 803.0pt>
+<img/12cf.png, id=362, 803.0pt x 803.0pt>
 File: img/12cf.png Graphic file (type png)
 <use img/12cf.png>
-Package pdftex.def Info: img/12cf.png  used on input line 193.
+Package pdftex.def Info: img/12cf.png  used on input line 219.
 (pdftex.def)             Requested size: 241.84843pt x 241.84532pt.
 
 
-[13 <./img/needle_roller.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+[14 <./img/needle_roller.jpeg>]
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
-<img/3cf.png, id=331, 803.0pt x 803.0pt>
+<img/3cf.png, id=367, 803.0pt x 803.0pt>
 File: img/3cf.png Graphic file (type png)
 <use img/3cf.png>
-Package pdftex.def Info: img/3cf.png  used on input line 202.
+Package pdftex.def Info: img/3cf.png  used on input line 228.
 (pdftex.def)             Requested size: 241.84843pt x 241.84532pt.
 
 
-[14 <./img/12cf.png> <./img/3cf.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+[15 <./img/12cf.png> <./img/3cf.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
 
  []
 
-
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-
- []
-
-<img/LM61460.png, id=349, 642.4pt x 361.35pt>
-File: img/LM61460.png Graphic file (type png)
-<use img/LM61460.png>
-Package pdftex.def Info: img/LM61460.png  used on input line 263.
-(pdftex.def)             Requested size: 241.84843pt x 136.04074pt.
 
 
 [16]
-<img/TPS62932.png, id=357, 361.35pt x 203.76125pt>
-File: img/TPS62932.png Graphic file (type png)
-<use img/TPS62932.png>
-Package pdftex.def Info: img/TPS62932.png  used on input line 276.
-(pdftex.def)             Requested size: 241.84843pt x 136.3763pt.
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
+<img/LM61460.png, id=385, 642.4pt x 361.35pt>
+File: img/LM61460.png Graphic file (type png)
+<use img/LM61460.png>
+Package pdftex.def Info: img/LM61460.png  used on input line 289.
+(pdftex.def)             Requested size: 241.84843pt x 136.04074pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--288
+
+[17]
+<img/TPS62932.png, id=393, 361.35pt x 203.76125pt>
+File: img/TPS62932.png Graphic file (type png)
+<use img/TPS62932.png>
+Package pdftex.def Info: img/TPS62932.png  used on input line 302.
+(pdftex.def)             Requested size: 241.84843pt x 136.3763pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 
  []
 
-<img/TI_LM.png, id=359, 2890.8pt x 1722.435pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
+
+ []
+
+<img/TI_LM.png, id=395, 2890.8pt x 1722.435pt>
 File: img/TI_LM.png Graphic file (type png)
 <use img/TI_LM.png>
-Package pdftex.def Info: img/TI_LM.png  used on input line 291.
+Package pdftex.def Info: img/TI_LM.png  used on input line 317.
 (pdftex.def)             Requested size: 483.69687pt x 288.1844pt.
-<img/TI_TPS.png, id=360, 2890.8pt x 1722.435pt>
+<img/TI_TPS.png, id=396, 2890.8pt x 1722.435pt>
 File: img/TI_TPS.png Graphic file (type png)
 <use img/TI_TPS.png>
-Package pdftex.def Info: img/TI_TPS.png  used on input line 292.
+Package pdftex.def Info: img/TI_TPS.png  used on input line 318.
 (pdftex.def)             Requested size: 483.69687pt x 288.1844pt.
 
 
-[17 <./img/LM61460.png> <./img/TPS62932.png>]
-<img/sch1.png, id=368, 2678.005pt x 1548.78625pt>
+[18 <./img/LM61460.png> <./img/TPS62932.png>]
+<img/sch1.png, id=404, 2678.005pt x 1548.78625pt>
 File: img/sch1.png Graphic file (type png)
 <use img/sch1.png>
-Package pdftex.def Info: img/sch1.png  used on input line 301.
+Package pdftex.def Info: img/sch1.png  used on input line 327.
 (pdftex.def)             Requested size: 314.40001pt x 181.8288pt.
-<img/sch2.png, id=369, 2678.005pt x 1548.78625pt>
+<img/sch2.png, id=405, 2678.005pt x 1548.78625pt>
 File: img/sch2.png Graphic file (type png)
 <use img/sch2.png>
-Package pdftex.def Info: img/sch2.png  used on input line 302.
+Package pdftex.def Info: img/sch2.png  used on input line 328.
 (pdftex.def)             Requested size: 314.40001pt x 181.8288pt.
-<img/sch3.png, id=370, 1834.855pt x 1548.78625pt>
+<img/sch3.png, id=406, 1834.855pt x 1548.78625pt>
 File: img/sch3.png Graphic file (type png)
 <use img/sch3.png>
-Package pdftex.def Info: img/sch3.png  used on input line 303.
+Package pdftex.def Info: img/sch3.png  used on input line 329.
 (pdftex.def)             Requested size: 314.40001pt x 265.36984pt.
 
 
-[18 <./img/TI_LM.png> <./img/TI_TPS.png>]
+[19 <./img/TI_LM.png> <./img/TI_TPS.png>]
 
-[19 <./img/sch1.png> <./img/sch2.png> <./img/sch3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
+[20 <./img/sch1.png> <./img/sch2.png> <./img/sch3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
 
  []
 
-<img/outline.png, id=386, 1173.38374pt x 829.0975pt>
+<img/outline.png, id=422, 1173.38374pt x 829.0975pt>
 File: img/outline.png Graphic file (type png)
 <use img/outline.png>
-Package pdftex.def Info: img/outline.png  used on input line 327.
+Package pdftex.def Info: img/outline.png  used on input line 353.
 (pdftex.def)             Requested size: 314.40001pt x 222.15143pt.
-<img/fixed_items.png, id=387, 1173.38374pt x 829.0975pt>
+<img/fixed_items.png, id=423, 1173.38374pt x 829.0975pt>
 File: img/fixed_items.png Graphic file (type png)
 <use img/fixed_items.png>
-Package pdftex.def Info: img/fixed_items.png  used on input line 336.
+Package pdftex.def Info: img/fixed_items.png  used on input line 362.
 (pdftex.def)             Requested size: 314.40001pt x 222.15143pt.
 
 
-[20 <./img/outline.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 341--342
+[21 <./img/outline.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
 
  []
 
-<img/Layout.png, id=398, 1173.38374pt x 829.0975pt>
+<img/Layout.png, id=434, 1173.38374pt x 829.0975pt>
 File: img/Layout.png Graphic file (type png)
 <use img/Layout.png>
-Package pdftex.def Info: img/Layout.png  used on input line 347.
+Package pdftex.def Info: img/Layout.png  used on input line 373.
 (pdftex.def)             Requested size: 386.95897pt x 273.41325pt.
 
 
-[21 <./img/fixed_items.png>]
-<img/l1.png, id=405, 1173.38374pt x 829.0975pt>
+[22 <./img/fixed_items.png>]
+<img/l1.png, id=441, 1173.38374pt x 829.0975pt>
 File: img/l1.png Graphic file (type png)
 <use img/l1.png>
-Package pdftex.def Info: img/l1.png  used on input line 356.
+Package pdftex.def Info: img/l1.png  used on input line 382.
 (pdftex.def)             Requested size: 290.22107pt x 205.05994pt.
-<img/l2.png, id=406, 1173.38374pt x 829.0975pt>
+<img/l2.png, id=442, 1173.38374pt x 829.0975pt>
 File: img/l2.png Graphic file (type png)
 <use img/l2.png>
-Package pdftex.def Info: img/l2.png  used on input line 361.
+Package pdftex.def Info: img/l2.png  used on input line 387.
 (pdftex.def)             Requested size: 290.22107pt x 205.05994pt.
-<img/l3.png, id=407, 1173.38374pt x 829.0975pt>
+<img/l3.png, id=443, 1173.38374pt x 829.0975pt>
 File: img/l3.png Graphic file (type png)
 <use img/l3.png>
-Package pdftex.def Info: img/l3.png  used on input line 362.
+Package pdftex.def Info: img/l3.png  used on input line 388.
 (pdftex.def)             Requested size: 290.22107pt x 205.05994pt.
-<img/l4.png, id=408, 1173.38374pt x 829.0975pt>
+<img/l4.png, id=444, 1173.38374pt x 829.0975pt>
 File: img/l4.png Graphic file (type png)
 <use img/l4.png>
-Package pdftex.def Info: img/l4.png  used on input line 363.
+Package pdftex.def Info: img/l4.png  used on input line 389.
 (pdftex.def)             Requested size: 290.22107pt x 205.05994pt.
 
 
-[22 <./img/Layout.png> <./img/l1.png>]
-<img/top_render.png, id=417, 2691.05376pt x 1631.09375pt>
+[23 <./img/Layout.png> <./img/l1.png>]
+<img/top_render.png, id=453, 2691.05376pt x 1631.09375pt>
 File: img/top_render.png Graphic file (type png)
 <use img/top_render.png>
-Package pdftex.def Info: img/top_render.png  used on input line 372.
+Package pdftex.def Info: img/top_render.png  used on input line 398.
 (pdftex.def)             Requested size: 483.69687pt x 293.1611pt.
-<img/bottom_render.png, id=418, 2691.05376pt x 1631.09375pt>
+<img/bottom_render.png, id=454, 2691.05376pt x 1631.09375pt>
 File: img/bottom_render.png Graphic file (type png)
 <use img/bottom_render.png>
-Package pdftex.def Info: img/bottom_render.png  used on input line 373.
+Package pdftex.def Info: img/bottom_render.png  used on input line 399.
 (pdftex.def)             Requested size: 483.69687pt x 293.1611pt.
 
 
-[23 <./img/l2.png> <./img/l3.png> <./img/l4.png>]
+[24 <./img/l2.png> <./img/l3.png> <./img/l4.png>]
 
-[24 <./img/top_render.png> <./img/bottom_render.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 391--392
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--394
+[25 <./img/top_render.png> <./img/bottom_render.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
-<img/solder_paste.jpeg, id=435, 4047.12pt x 3035.34pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
+
+ []
+
+<img/solder_paste.jpeg, id=473, 4047.12pt x 3035.34pt>
 File: img/solder_paste.jpeg Graphic file (type jpg)
 <use img/solder_paste.jpeg>
-Package pdftex.def Info: img/solder_paste.jpeg  used on input line 397.
+Package pdftex.def Info: img/solder_paste.jpeg  used on input line 423.
 (pdftex.def)             Requested size: 386.95897pt x 290.21292pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
 
  []
 
 
 
-[25 <./img/solder_paste.jpeg>]
-<img/IHBT.png, id=445, 2890.8pt x 1813.77625pt>
+[26 <./img/solder_paste.jpeg>]
+<img/IHBT.png, id=482, 2890.8pt x 1813.77625pt>
 File: img/IHBT.png Graphic file (type png)
 <use img/IHBT.png>
-Package pdftex.def Info: img/IHBT.png  used on input line 408.
+Package pdftex.def Info: img/IHBT.png  used on input line 434.
 (pdftex.def)             Requested size: 386.95897pt x 242.77353pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 415--416
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
 
  []
 
 
 
-[26 <./img/IHBT.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 450--451
+[27 <./img/IHBT.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 452--453
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--455
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
 
  []
 
-<img/bodge.jpeg, id=462, 4047.12pt x 3035.34pt>
+<img/bodge.jpeg, id=498, 4047.12pt x 3035.34pt>
 File: img/bodge.jpeg Graphic file (type jpg)
 <use img/bodge.jpeg>
-Package pdftex.def Info: img/bodge.jpeg  used on input line 458.
+Package pdftex.def Info: img/bodge.jpeg  used on input line 484.
 (pdftex.def)             Requested size: 386.95897pt x 290.21292pt.
 
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--466
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
 
  []
 
 
 
-[28 <./img/bodge.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 473--474
+[29 <./img/bodge.jpeg>]
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--476
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--478
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
+Underfull \hbox (badness 10000) in paragraph at lines 505--506
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 483--484
+Underfull \hbox (badness 10000) in paragraph at lines 509--510
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 487--488
+Underfull \hbox (badness 10000) in paragraph at lines 513--514
 
  []
 
-<img/top_full.png, id=486, 1342.01375pt x 2101.8525pt>
+<img/top_full.png, id=522, 1342.01375pt x 2101.8525pt>
 File: img/top_full.png Graphic file (type png)
 <use img/top_full.png>
-Package pdftex.def Info: img/top_full.png  used on input line 491.
+Package pdftex.def Info: img/top_full.png  used on input line 517.
 (pdftex.def)             Requested size: 386.95897pt x 606.02582pt.
 
 
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 496--497
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 522--523
 
  []
 
 
 
-[30 <./img/top_full.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 498--499
+[31 <./img/top_full.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 524--525
 
  []
 
 
-LaTeX Warning: Reference `fig:wheel_CAD' on page 31 undefined on input line 504
+LaTeX Warning: Reference `fig:wheel_CAD' on page 32 undefined on input line 530
 .
 
-<img/front_wheel_adapter.png, id=497, 1777.64125pt x 1101.11375pt>
+<img/front_wheel_adapter.png, id=534, 1777.64125pt x 1101.11375pt>
 File: img/front_wheel_adapter.png Graphic file (type png)
 <use img/front_wheel_adapter.png>
-Package pdftex.def Info: img/front_wheel_adapter.png  used on input line 508.
+Package pdftex.def Info: img/front_wheel_adapter.png  used on input line 534.
 (pdftex.def)             Requested size: 193.47578pt x 119.82916pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
 
  []
 
-<img/steering_knuckle.png, id=498, 1777.64125pt x 1101.11375pt>
+<img/steering_knuckle.png, id=535, 1777.64125pt x 1101.11375pt>
 File: img/steering_knuckle.png Graphic file (type png)
 <use img/steering_knuckle.png>
-Package pdftex.def Info: img/steering_knuckle.png  used on input line 521.
+Package pdftex.def Info: img/steering_knuckle.png  used on input line 547.
 (pdftex.def)             Requested size: 193.47578pt x 119.82916pt.
 
 
-[31 <./img/front_wheel_adapter.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 526--527
+[32 <./img/front_wheel_adapter.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--533
+Underfull \hbox (badness 10000) in paragraph at lines 558--559
 
  []
 
-<img/steering_col_parts.png, id=510, 2168.1pt x 1403.2425pt>
+<img/steering_col_parts.png, id=546, 2168.1pt x 1403.2425pt>
 File: img/steering_col_parts.png Graphic file (type png)
 <use img/steering_col_parts.png>
-Package pdftex.def Info: img/steering_col_parts.png  used on input line 536.
+Package pdftex.def Info: img/steering_col_parts.png  used on input line 562.
 (pdftex.def)             Requested size: 290.22107pt x 187.82368pt.
 
 
-[32 <./img/steering_knuckle.png> <./img/steering_col_parts.png>]
-<img/top_brace.png, id=518, 2168.1pt x 1403.2425pt>
+[33 <./img/steering_knuckle.png> <./img/steering_col_parts.png>]
+<img/top_brace.png, id=554, 2168.1pt x 1403.2425pt>
 File: img/top_brace.png Graphic file (type png)
 <use img/top_brace.png>
-Package pdftex.def Info: img/top_brace.png  used on input line 545.
+Package pdftex.def Info: img/top_brace.png  used on input line 571.
 (pdftex.def)             Requested size: 193.47578pt x 125.21579pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 550--551
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
 
-<img/bottom_brace.png, id=521, 2445.135pt x 1069.9975pt>
+<img/bottom_brace.png, id=557, 2445.135pt x 1069.9975pt>
 File: img/bottom_brace.png Graphic file (type png)
 <use img/bottom_brace.png>
-Package pdftex.def Info: img/bottom_brace.png  used on input line 556.
+Package pdftex.def Info: img/bottom_brace.png  used on input line 582.
 (pdftex.def)             Requested size: 193.47578pt x 84.65459pt.
-<img/side_brace.png, id=522, 1776.6375pt x 1358.07375pt>
+<img/side_brace.png, id=558, 1776.6375pt x 1358.07375pt>
 File: img/side_brace.png Graphic file (type png)
 <use img/side_brace.png>
-Package pdftex.def Info: img/side_brace.png  used on input line 565.
+Package pdftex.def Info: img/side_brace.png  used on input line 591.
 (pdftex.def)             Requested size: 193.47578pt x 147.87582pt.
 
 
-[33 <./img/top_brace.png> <./img/bottom_brace.png>]
-<img/servo_horn.png, id=530, 1776.6375pt x 1159.33125pt>
+[34 <./img/top_brace.png> <./img/bottom_brace.png>]
+<img/servo_horn.png, id=566, 1776.6375pt x 1159.33125pt>
 File: img/servo_horn.png Graphic file (type png)
 <use img/servo_horn.png>
-Package pdftex.def Info: img/servo_horn.png  used on input line 578.
+Package pdftex.def Info: img/servo_horn.png  used on input line 604.
 (pdftex.def)             Requested size: 290.22107pt x 189.37088pt.
 
 
-[34 <./img/side_brace.png> <./img/servo_horn.png>]
-<img/steering_link_1.png, id=543, 1237.62375pt x 798.985pt>
+[35 <./img/side_brace.png> <./img/servo_horn.png>]
+<img/steering_link_1.png, id=579, 1237.62375pt x 798.985pt>
 File: img/steering_link_1.png Graphic file (type png)
 <use img/steering_link_1.png>
-Package pdftex.def Info: img/steering_link_1.png  used on input line 594.
+Package pdftex.def Info: img/steering_link_1.png  used on input line 620.
 (pdftex.def)             Requested size: 185.01411pt x 119.44025pt.
-<img/steering_link_2.png, id=544, 1237.62375pt x 798.985pt>
+<img/steering_link_2.png, id=580, 1237.62375pt x 798.985pt>
 File: img/steering_link_2.png Graphic file (type png)
 <use img/steering_link_2.png>
-Package pdftex.def Info: img/steering_link_2.png  used on input line 603.
+Package pdftex.def Info: img/steering_link_2.png  used on input line 629.
 (pdftex.def)             Requested size: 185.01411pt x 119.44025pt.
-<img/steering_link_3.png, id=545, 1237.62375pt x 1100.11pt>
+<img/steering_link_3.png, id=581, 1237.62375pt x 1100.11pt>
 File: img/steering_link_3.png Graphic file (type png)
 <use img/steering_link_3.png>
-Package pdftex.def Info: img/steering_link_3.png  used on input line 613.
+Package pdftex.def Info: img/steering_link_3.png  used on input line 639.
 (pdftex.def)             Requested size: 232.17242pt x 206.37083pt.
-<img/tpu_spacer.png, id=547, 1576.89125pt x 1542.76375pt>
+<img/tpu_spacer.png, id=583, 1576.89125pt x 1542.76375pt>
 File: img/tpu_spacer.png Graphic file (type png)
 <use img/tpu_spacer.png>
-Package pdftex.def Info: img/tpu_spacer.png  used on input line 628.
+Package pdftex.def Info: img/tpu_spacer.png  used on input line 654.
 (pdftex.def)             Requested size: 290.22107pt x 283.92377pt.
 
 
-[35 <./img/steering_link_1.png> <./img/steering_link_2.png> <./img/steering_lin
+[36 <./img/steering_link_1.png> <./img/steering_link_2.png> <./img/steering_lin
 k_3.png>]
-<img/diff_gearbox.png, id=557, 1849.91125pt x 904.37875pt>
+<img/diff_gearbox.png, id=592, 1849.91125pt x 904.37875pt>
 File: img/diff_gearbox.png Graphic file (type png)
 <use img/diff_gearbox.png>
-Package pdftex.def Info: img/diff_gearbox.png  used on input line 639.
+Package pdftex.def Info: img/diff_gearbox.png  used on input line 665.
 (pdftex.def)             Requested size: 435.32422pt x 212.81883pt.
 
 
-[36 <./img/tpu_spacer.png> <./img/diff_gearbox.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 648--649
+[37 <./img/tpu_spacer.png> <./img/diff_gearbox.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 674--675
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 650--651
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
 
  []
 
-<img/diff_gear_1.png, id=566, 1371.1225pt x 935.495pt>
+<img/diff_gear_1.png, id=603, 1371.1225pt x 935.495pt>
 File: img/diff_gear_1.png Graphic file (type png)
 <use img/diff_gear_1.png>
-Package pdftex.def Info: img/diff_gear_1.png  used on input line 661.
+Package pdftex.def Info: img/diff_gear_1.png  used on input line 687.
 (pdftex.def)             Requested size: 185.01411pt x 126.22928pt.
-<img/diff_gear_2.png, id=567, 1371.1225pt x 1214.5375pt>
+<img/diff_gear_2.png, id=604, 1371.1225pt x 1214.5375pt>
 File: img/diff_gear_2.png Graphic file (type png)
 <use img/diff_gear_2.png>
-Package pdftex.def Info: img/diff_gear_2.png  used on input line 670.
+Package pdftex.def Info: img/diff_gear_2.png  used on input line 696.
 (pdftex.def)             Requested size: 185.01411pt x 163.88135pt.
-<img/diff_gear_3.png, id=568, 1371.1225pt x 1675.25874pt>
+<img/diff_gear_3.png, id=605, 1371.1225pt x 1675.25874pt>
 File: img/diff_gear_3.png Graphic file (type png)
 <use img/diff_gear_3.png>
-Package pdftex.def Info: img/diff_gear_3.png  used on input line 680.
+Package pdftex.def Info: img/diff_gear_3.png  used on input line 706.
 (pdftex.def)             Requested size: 232.17242pt x 283.66548pt.
 
 
-[37 <./img/diff_gear_1.png> <./img/diff_gear_2.png> <./img/diff_gear_3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 692--693
-
- []
-
-<img/diff_sc_1.png, id=580, 1371.1225pt x 1484.54625pt>
-File: img/diff_sc_1.png Graphic file (type png)
-<use img/diff_sc_1.png>
-Package pdftex.def Info: img/diff_sc_1.png  used on input line 700.
-(pdftex.def)             Requested size: 232.16719pt x 251.37282pt.
-<img/diff_sc_2.png, id=581, 1371.1225pt x 1484.54625pt>
-File: img/diff_sc_2.png Graphic file (type png)
-<use img/diff_sc_2.png>
-Package pdftex.def Info: img/diff_sc_2.png  used on input line 707.
-(pdftex.def)             Requested size: 232.16719pt x 251.37282pt.
-
+[38 <./img/diff_gear_1.png> <./img/diff_gear_2.png> <./img/diff_gear_3.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 718--719
 
  []
 
+<img/diff_sc_1.png, id=616, 1371.1225pt x 1484.54625pt>
+File: img/diff_sc_1.png Graphic file (type png)
+<use img/diff_sc_1.png>
+Package pdftex.def Info: img/diff_sc_1.png  used on input line 726.
+(pdftex.def)             Requested size: 232.16719pt x 251.37282pt.
+<img/diff_sc_2.png, id=617, 1371.1225pt x 1484.54625pt>
+File: img/diff_sc_2.png Graphic file (type png)
+<use img/diff_sc_2.png>
+Package pdftex.def Info: img/diff_sc_2.png  used on input line 733.
+(pdftex.def)             Requested size: 232.16719pt x 251.37282pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 720--721
+Underfull \hbox (badness 10000) in paragraph at lines 744--745
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 746--747
 
  []
 
 
 
-[38 <./img/diff_sc_1.png> <./img/diff_sc_2.png>]
-<img/diff_housing.png, id=594, 1976.38374pt x 1677.26625pt>
+[39 <./img/diff_sc_1.png> <./img/diff_sc_2.png>]
+<img/diff_housing.png, id=629, 1976.38374pt x 1677.26625pt>
 File: img/diff_housing.png Graphic file (type png)
 <use img/diff_housing.png>
-Package pdftex.def Info: img/diff_housing.png  used on input line 726.
+Package pdftex.def Info: img/diff_housing.png  used on input line 752.
 (pdftex.def)             Requested size: 290.22107pt x 246.28133pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 733--734
+Underfull \hbox (badness 10000) in paragraph at lines 759--760
 
  []
 
-<img/cup.png, id=596, 1425.325pt x 1009.7725pt>
+<img/cup.png, id=631, 1425.325pt x 1009.7725pt>
 File: img/cup.png Graphic file (type png)
 <use img/cup.png>
-Package pdftex.def Info: img/cup.png  used on input line 739.
+Package pdftex.def Info: img/cup.png  used on input line 765.
 (pdftex.def)             Requested size: 290.22107pt x 205.60258pt.
 
 
-[39 <./img/diff_housing.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 752--753
-
- []
-
-<img/diff_spacer.png, id=607, 1006.76125pt x 1133.23375pt>
-File: img/diff_spacer.png Graphic file (type png)
-<use img/diff_spacer.png>
-Package pdftex.def Info: img/diff_spacer.png  used on input line 758.
-(pdftex.def)             Requested size: 290.22107pt x 326.6754pt.
-
-
-[40 <./img/cup.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 765--766
-
- []
-
-<img/rear_assem.png, id=618, 1538.74875pt x 1249.66875pt>
-File: img/rear_assem.png Graphic file (type png)
-<use img/rear_assem.png>
-Package pdftex.def Info: img/rear_assem.png  used on input line 771.
-(pdftex.def)             Requested size: 386.95897pt x 314.26605pt.
-
-
-[41 <./img/diff_spacer.png>]
+[40 <./img/diff_housing.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 778--779
 
  []
 
+<img/diff_spacer.png, id=642, 1006.76125pt x 1133.23375pt>
+File: img/diff_spacer.png Graphic file (type png)
+<use img/diff_spacer.png>
+Package pdftex.def Info: img/diff_spacer.png  used on input line 784.
+(pdftex.def)             Requested size: 290.22107pt x 326.6754pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 780--781
+
+[41 <./img/cup.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 791--792
 
  []
 
-<img/rear_fmount.png, id=628, 1808.7575pt x 1249.66875pt>
+<img/rear_assem.png, id=653, 1538.74875pt x 1249.66875pt>
+File: img/rear_assem.png Graphic file (type png)
+<use img/rear_assem.png>
+Package pdftex.def Info: img/rear_assem.png  used on input line 797.
+(pdftex.def)             Requested size: 386.95897pt x 314.26605pt.
+
+
+[42 <./img/diff_spacer.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 804--805
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 806--807
+
+ []
+
+<img/rear_fmount.png, id=663, 1808.7575pt x 1249.66875pt>
 File: img/rear_fmount.png Graphic file (type png)
 <use img/rear_fmount.png>
-Package pdftex.def Info: img/rear_fmount.png  used on input line 786.
+Package pdftex.def Info: img/rear_fmount.png  used on input line 812.
 (pdftex.def)             Requested size: 386.95897pt x 267.33876pt.
 
 
-[42 <./img/rear_assem.png>]
-<img/rear_fmount_print.png, id=635, 1189.44376pt x 1562.83875pt>
+[43 <./img/rear_assem.png>]
+<img/rear_fmount_print.png, id=671, 1189.44376pt x 1562.83875pt>
 File: img/rear_fmount_print.png Graphic file (type png)
 <use img/rear_fmount_print.png>
-Package pdftex.def Info: img/rear_fmount_print.png  used on input line 793.
+Package pdftex.def Info: img/rear_fmount_print.png  used on input line 819.
 (pdftex.def)             Requested size: 241.84843pt x 317.76085pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 800--801
-
- []
-
-
-
-[43 <./img/rear_fmount.png> <./img/rear_fmount_print.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 802--803
-
- []
-
-<img/rear_bmount.png, id=643, 2088.80376pt x 1179.40625pt>
-File: img/rear_bmount.png Graphic file (type png)
-<use img/rear_bmount.png>
-Package pdftex.def Info: img/rear_bmount.png  used on input line 806.
-(pdftex.def)             Requested size: 386.95897pt x 218.47469pt.
-<img/center_assem.png, id=644, 1208.515pt x 1294.8375pt>
-File: img/center_assem.png Graphic file (type png)
-<use img/center_assem.png>
-Package pdftex.def Info: img/center_assem.png  used on input line 819.
-(pdftex.def)             Requested size: 386.95897pt x 414.59355pt.
-
-
-[44 <./img/rear_bmount.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 826--827
 
  []
 
 
+
+[44 <./img/rear_fmount.png> <./img/rear_fmount_print.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 828--829
 
  []
 
-<img/top_br.png, id=652, 1515.6625pt x 963.6pt>
+<img/rear_bmount.png, id=678, 2088.80376pt x 1179.40625pt>
+File: img/rear_bmount.png Graphic file (type png)
+<use img/rear_bmount.png>
+Package pdftex.def Info: img/rear_bmount.png  used on input line 832.
+(pdftex.def)             Requested size: 386.95897pt x 218.47469pt.
+<img/center_assem.png, id=679, 1208.515pt x 1294.8375pt>
+File: img/center_assem.png Graphic file (type png)
+<use img/center_assem.png>
+Package pdftex.def Info: img/center_assem.png  used on input line 845.
+(pdftex.def)             Requested size: 386.95897pt x 414.59355pt.
+
+
+[45 <./img/rear_bmount.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 852--853
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 854--855
+
+ []
+
+<img/top_br.png, id=687, 1515.6625pt x 963.6pt>
 File: img/top_br.png Graphic file (type png)
 <use img/top_br.png>
-Package pdftex.def Info: img/top_br.png  used on input line 834.
+Package pdftex.def Info: img/top_br.png  used on input line 860.
 (pdftex.def)             Requested size: 386.95897pt x 246.00146pt.
 
 
-[45 <./img/center_assem.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 843--844
-
- []
-
-<img/bl_br_br.png, id=659, 1515.6625pt x 963.6pt>
-File: img/bl_br_br.png Graphic file (type png)
-<use img/bl_br_br.png>
-Package pdftex.def Info: img/bl_br_br.png  used on input line 849.
-(pdftex.def)             Requested size: 386.95897pt x 246.00146pt.
-
-
-[46 <./img/top_br.png>]
-<img/rear_bearing_mount.png, id=666, 1640.1275pt x 949.5475pt>
-File: img/rear_bearing_mount.png Graphic file (type png)
-<use img/rear_bearing_mount.png>
-Package pdftex.def Info: img/rear_bearing_mount.png  used on input line 858.
-(pdftex.def)             Requested size: 386.95897pt x 224.02751pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 863--864
-
- []
-
-
+[46 <./img/center_assem.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 869--870
 
  []
 
+<img/bl_br_br.png, id=694, 1515.6625pt x 963.6pt>
+File: img/bl_br_br.png Graphic file (type png)
+<use img/bl_br_br.png>
+Package pdftex.def Info: img/bl_br_br.png  used on input line 875.
+(pdftex.def)             Requested size: 386.95897pt x 246.00146pt.
 
 
-[47 <./img/bl_br_br.png> <./img/rear_bearing_mount.png>]
-<img/lidar_mount.png, id=674, 1658.195pt x 1221.56375pt>
+[47 <./img/top_br.png>]
+<img/rear_bearing_mount.png, id=701, 1640.1275pt x 949.5475pt>
+File: img/rear_bearing_mount.png Graphic file (type png)
+<use img/rear_bearing_mount.png>
+Package pdftex.def Info: img/rear_bearing_mount.png  used on input line 884.
+(pdftex.def)             Requested size: 386.95897pt x 224.02751pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 889--890
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 895--896
+
+ []
+
+
+
+[48 <./img/bl_br_br.png> <./img/rear_bearing_mount.png>]
+<img/lidar_mount.png, id=709, 1658.195pt x 1221.56375pt>
 File: img/lidar_mount.png Graphic file (type png)
 <use img/lidar_mount.png>
-Package pdftex.def Info: img/lidar_mount.png  used on input line 875.
+Package pdftex.def Info: img/lidar_mount.png  used on input line 901.
 (pdftex.def)             Requested size: 386.95897pt x 285.05444pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 912--913
 
-[48 <./img/lidar_mount.png>] (./manual.aux)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 914--915
+
+ []
+
+
+
+[49 <./img/lidar_mount.png>]
+<img/wheel_hub.png, id=719, 1658.195pt x 1221.56375pt>
+File: img/wheel_hub.png Graphic file (type png)
+<use img/wheel_hub.png>
+Package pdftex.def Info: img/wheel_hub.png  used on input line 918.
+(pdftex.def)             Requested size: 386.95897pt x 285.05444pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 925--926
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 927--928
+
+ []
+
+<img/rpi_mount.png, id=721, 1189.44376pt x 838.13126pt>
+File: img/rpi_mount.png Graphic file (type png)
+<use img/rpi_mount.png>
+Package pdftex.def Info: img/rpi_mount.png  used on input line 931.
+(pdftex.def)             Requested size: 386.95897pt x 272.65799pt.
+
+
+[50 <./img/wheel_hub.png>]
+<img/esc_wire_mount.png, id=729, 1397.22pt x 1246.6575pt>
+File: img/esc_wire_mount.png Graphic file (type png)
+<use img/esc_wire_mount.png>
+Package pdftex.def Info: img/esc_wire_mount.png  used on input line 942.
+(pdftex.def)             Requested size: 290.22107pt x 258.95244pt.
+
+
+[51 <./img/rpi_mount.png> <./img/esc_wire_mount.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 953--954
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 955--956
+
+ []
+
+<img/tire_mold.png, id=738, 1397.22pt x 1246.6575pt>
+File: img/tire_mold.png Graphic file (type png)
+<use img/tire_mold.png>
+Package pdftex.def Info: img/tire_mold.png  used on input line 959.
+(pdftex.def)             Requested size: 290.22107pt x 258.95244pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 966--967
+
+ []
+
+<img/standoff_cutting.png, id=740, 1397.22pt x 1246.6575pt>
+File: img/standoff_cutting.png Graphic file (type png)
+<use img/standoff_cutting.png>
+Package pdftex.def Info: img/standoff_cutting.png  used on input line 972.
+(pdftex.def)             Requested size: 290.22107pt x 258.95244pt.
+
+
+[52 <./img/tire_mold.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 979--980
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 981--982
+
+ []
+
+<img/rod_cutting_tool.png, id=749, 1397.22pt x 1246.6575pt>
+File: img/rod_cutting_tool.png Graphic file (type png)
+<use img/rod_cutting_tool.png>
+Package pdftex.def Info: img/rod_cutting_tool.png  used on input line 987.
+(pdftex.def)             Requested size: 290.22107pt x 258.95244pt.
+
+
+[53 <./img/standoff_cutting.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 994--995
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 996--997
+
+ []
+
+<img/rod_drilling_tool.png, id=758, 867.24pt x 753.81625pt>
+File: img/rod_drilling_tool.png Graphic file (type png)
+<use img/rod_drilling_tool.png>
+Package pdftex.def Info: img/rod_drilling_tool.png  used on input line 1002.
+(pdftex.def)             Requested size: 290.22107pt x 252.26833pt.
+
+
+[54 <./img/rod_cutting_tool.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1009--1010
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1011--1012
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1014
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
+
+ []
+
+
+
+[55 <./img/rod_drilling_tool.png>]
+
+[56] (./manual.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1274,30 +1443,32 @@ Package rerunfilecheck Warning: File `manual.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `manual.out':
-(rerunfilecheck)             Before: C283773C53D18DCA9F3EBE0E675D91D2;3620
-(rerunfilecheck)             After:  5FFAE9736B2F7046F78F9C308948C0AD;3733.
+(rerunfilecheck)             Before: 802876C18EF57B2BEBA9E4AF41455B5E;3899
+(rerunfilecheck)             After:  61D1FD395B226A89AD56229C57CF8C56;4054.
  ) 
 Here is how much of TeX's memory you used:
- 12654 strings out of 473190
- 200539 string characters out of 5715801
- 600033 words of memory out of 5000000
- 35567 multiletter control sequences out of 15000+600000
- 569215 words of font info for 77 fonts, out of 8000000 for 9000
+ 12955 strings out of 473190
+ 205763 string characters out of 5715801
+ 606748 words of memory out of 5000000
+ 35830 multiletter control sequences out of 15000+600000
+ 571337 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,79p,1210b,610s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
-/texlive/2025/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on manual.pdf (48 pages, 18745417 bytes).
+ 75i,11n,79p,1210b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/
+texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
+Output written on manual.pdf (56 pages, 21348785 bytes).
 PDF statistics:
- 767 PDF objects out of 1000 (max. 8388607)
- 580 compressed objects within 6 object streams
- 199 named destinations out of 1000 (max. 500000)
- 535 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 876 PDF objects out of 1000 (max. 8388607)
+ 662 compressed objects within 7 object streams
+ 225 named destinations out of 1000 (max. 500000)
+ 594 words of extra memory for PDF output out of 10000 (max. 10000000)
 

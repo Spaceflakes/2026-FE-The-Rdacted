@@ -1,0 +1,26 @@
+Category,Component,Specification / Fastener Type,Head / Drive Type,Assembly Qty,Application / Where Needed
+Screws,M2 x 12mm Screw,M2 x 12mm,Socket Head,4,Wheel Hubs to Axles (1x per wheel hub across 4 wheels)
+Screws,M2 x 20mm Screw,M2 x 20mm,Socket Head,6,Steering Links to Knuckles (2x) and Front/Rear Axle Pins (4x)
+Screws,M2.5 x 8mm Screw,M2.5 x 8mm,Socket Head (Black Oxide),6,Raspberry Pi Mount to Pi (2x) and Pi to Nylon Standoffs (4x)
+Screws,M3 x 8mm Screw,M3 x 8mm,Socket Head,22,Motor to Front Mount (6x) Rear Axle Back Mount (8x) Top Brace to Motor Mount (6x) Top Brace to Knuckles (2x)
+Screws,M3 x 8mm CSK Screw,M3 x 8mm,Countersunk (CSK),2,Bottom Brace to Steering Knuckles (2x)
+Screws,M3 x 10mm Screw,M3 x 10mm,Socket Head,2,Servo Link to Steering Linkage Pins (2x)
+Screws,M3 x 10mm Button Screw,M3 x 10mm,Button Head,3,Differential Gearbox Spider Center suspension (3x)
+Screws,M3 x 10mm CSK Screw,M3 x 10mm,Countersunk (CSK),5,LiDAR & ESC Mount to LiDAR (3x) and Bottom Brace to Side Braces (2x)
+Screws,M3 x 12mm Screw,M3 x 12mm,Socket Head,6,Steering Knuckle Clamps (2 per clamp x 2 knuckles = 4x) and Top Brace to Steering Mount (2x)
+Screws,M3 x 16mm Screw,M3 x 16mm,Socket Head,2,Optional frame structural reinforcement / general assembly
+Screws,M3 x 20mm Screw,M3 x 20mm,Socket Head,4,Steering Servo to Top Brace (4x)
+Screws,M3 x 20mm Button Screw,M3 x 20mm,Button Head,4,Differential Main Gears to Axle Attaching Cups (2 per gear x 2 gears = 4x)
+Screws,M3 x 30mm Screw,M3 x 30mm,Socket Head,7,Differential Gearbox Housing halves (3x) and Tire Mold Tool clamping (4x)
+Nuts,M2 Hex Nut,M2,Hex (SS304),4,Wheel Hub and Axle pin retention nuts
+Nuts,M2.5 Hex Nut,M2.5,Hex (SS304),4,Raspberry Pi Mount and Standoff retention nuts
+Nuts,M3 Hex Nut,M3,Hex (SS304 / Mild Steel),11,Steering Knuckle Clamps (4x) Differential Housing (3x) and Tire Mold Tool clamping (4x)
+Standoffs,M2.5 Nylon Standoff,M2.5 x 15mm (cut to 14mm),Female-Female Hex,4,Mounting spacing between Raspberry Pi 4B and Custom PCB Hat
+Standoffs,M3 Brass Standoff,M3 x 6mm,Female-Female Hex,1,Press-fit spacer inside Servo Horn (1x)
+Heat-Set Inserts,M3 x 4mm Heat-Set Insert,M3 x 4mm (3mm OD),Slant Knurled Brass,4,Rear Axle Front Mount (Motor Mount) rear interface to Back Mount (4x)
+Heat-Set Inserts,M3 x 6mm Heat-Set Insert,M3 x 6mm (3mm OD),Slant Knurled Brass,19,Top Brace front (2x) Side Braces (6x) Rear Axle Front Mount sides (6x) Top Brace center (2x) LiDAR/ESC Mount (3x)
+Bearings,Combined Needle/Thrust Bearing,BCWN-T-d12-IR (12mm ID),Roller Thrust,2,Front Steering Knuckles (2x)
+Bearings,Deep Groove Ball Bearing,6901ZZ (12mm ID x 24mm OD x 6mm W),Ball Bearing,4,Differential Gearbox Internal (2x) and External Housing Mounts (2x)
+Bearings,Needle Roller Bearing,BCWG-NK12/12 (12mm ID x 19.5mm OD x 12mm D),Needle Roller,2,Rear Axle Support Mounts (2x)
+Carbon Fiber,12mm Carbon Fiber Tube,12mm OD x 10mm ID x 500mm,Roll Wrapped Twill,1,Rear Wheel Axles (2x cut to ~60mm)
+Carbon Fiber,3mm Carbon Fiber Rod,3mm OD Solid x 1000mm,Pultruded Toe,2,Chassis Structural Spine (4x) and Steering Linkage Rods (2x cut to ~48mm)
