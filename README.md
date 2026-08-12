@@ -10,6 +10,7 @@
 	
 ## Content
 ### **Folders**
+* `Engineering Manual` is the official manual of team The Redacted for WRO FE 26. It contains the diagrams and details of all the CAD and parts used.
 * `PCBA` contains the complete set of KiCad Printed Circuit Board (PCB) files, manufacturing outputs, and documentation required to view, modify, assemble, and produce this board.
 * `t-photos` contains 1 formal image and 2 informal images
 * `v-photos` contains 6 photos of the vehicle (from every side, from top and bottom)
